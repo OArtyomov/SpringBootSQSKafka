@@ -1,1 +1,18 @@
-
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: true
+      bindings:
+        input:
+          destination: kafka-output
+          group: exampleOfConsumerGroup
+        output:
+          destination: kafka-output
+      default:
+        contentType: application/json
+management:
+  endpoints:
+    enabled-by-default:
