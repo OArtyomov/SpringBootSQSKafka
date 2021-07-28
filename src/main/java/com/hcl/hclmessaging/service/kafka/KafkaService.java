@@ -7,13 +7,13 @@ import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.GenericMessage;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.hcl.hclmessaging.utils.Constants.KAFKA_OUTPUT_BINDINGS;
+import static org.springframework.messaging.support.MessageBuilder.createMessage;
 
 @Service
 @AllArgsConstructor
@@ -22,21 +22,18 @@ public class KafkaService {
 
     private StreamBridge streamBridge;
 
-    public void sendMessage() {
-        Message<KafkaMessageDTO> message = buildMessage();
+    public void sendMessage(KafkaMessageDTO kafkaMessageDTO) {
+        Message<KafkaMessageDTO> message = buildMessage(kafkaMessageDTO);
         streamBridge.send(KAFKA_OUTPUT_BINDINGS, message);
-        log.info("Message is sent");
+        log.info("Message is sent to Kafka");
     }
 
-    private Message<KafkaMessageDTO> buildMessage() {
-        KafkaMessageDTO dto = new KafkaMessageDTO();
-        dto.setName("AAA");
+    private Message<KafkaMessageDTO> buildMessage(KafkaMessageDTO kafkaMessageDTO) {
         Map<String, Object> headersAsMap = new HashMap<>();
-        MessageHeaders headers = new MessageHeaders(headersAsMap);
-        return MessageBuilder.createMessage(dto, headers);
+        return createMessage(kafkaMessageDTO, new MessageHeaders(headersAsMap));
     }
 
-    public void processConsumedMessage(GenericMessage<KafkaMessageDTO> message){
-        log.info("Receive message fm Kafka: {}", message);
+    public void processConsumedMessage(GenericMessage<KafkaMessageDTO> message) {
+        log.info("Receive message from Kafka: {}", message);
     }
 }

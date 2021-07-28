@@ -1,6 +1,5 @@
 package com.hcl.hclmessaging.web;
 
-import com.hcl.hclmessaging.service.kafka.KafkaService;
 import com.hcl.hclmessaging.service.sqs.SQSService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -15,14 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SendMessageController {
 
-    private KafkaService kafkaService;
-
     private SQSService sqsService;
-
-    @RequestMapping("/sendToKafka")
-    public void sendMessageToKafka() {
-        kafkaService.sendMessage();
-    }
 
     @RequestMapping("/sendToSQS")
     public void sendMessageToSQS() {

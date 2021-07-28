@@ -4,6 +4,7 @@ import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.hcl.hclmessaging.dto.KafkaMessageDTO;
 import com.hcl.hclmessaging.service.kafka.KafkaService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.aws.core.env.ResourceIdResolver;
 import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +20,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import static com.hcl.hclmessaging.utils.Constants.KAFKA_INPUT_BINDINGS;
-import static java.util.Collections.singletonList;
 
 @Configuration
 @Slf4j
@@ -32,7 +32,12 @@ public class ApplicationBeans {
 
     @Bean
     public QueueMessagingTemplate queueMessagingTemplate(AmazonSQSAsync amazonSQSAsync) {
-        return new QueueMessagingTemplate(amazonSQSAsync);
+
+        MappingJackson2MessageConverter messageConverter = new MappingJackson2MessageConverter();
+        messageConverter.setStrictContentTypeMatch(false);
+        messageConverter.setSerializedPayloadClass(String.class);
+
+        return new QueueMessagingTemplate(amazonSQSAsync, (ResourceIdResolver) null, messageConverter);
     }
 
     @Bean
