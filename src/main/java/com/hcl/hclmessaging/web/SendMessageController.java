@@ -1,6 +1,6 @@
 package com.hcl.hclmessaging.web;
 
-import com.hcl.hclmessaging.service.KafkaService;
+import com.hcl.hclmessaging.service.kafka.KafkaService;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
