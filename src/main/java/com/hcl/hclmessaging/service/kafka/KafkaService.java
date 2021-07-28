@@ -37,6 +37,6 @@ public class KafkaService {
     }
 
     public void processConsumedMessage(GenericMessage<KafkaMessageDTO> message){
-        log.info("Message: {}", message);
+        log.info("Receive message fm Kafka: {}", message);
     }
 }

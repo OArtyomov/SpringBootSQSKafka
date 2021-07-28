@@ -11,8 +11,6 @@ spring:
           group: exampleOfConsumerGroup
         output:
           destination: kafka-output
-      default:
-        contentType: application/json
       source: input
 
 cloud:
