@@ -17,3 +17,15 @@ spring:
 management:
   endpoints:
     enabled-by-default:
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: us-east-2
+      auto: false
+      use-default-aws-region-chain: true
+    credentials:
+      access-key: AKIAVCTGKVB4HLAI35FW
+      secret-key: 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
