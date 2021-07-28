@@ -14,9 +14,6 @@ spring:
       default:
         contentType: application/json
       source: input
-management:
-  endpoints:
-    enabled-by-default:
 
 cloud:
   aws:
@@ -29,3 +26,6 @@ cloud:
     credentials:
       access-key: AKIAVCTGKVB4HLAI35FW
       secret-key: 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
+
+sqs:
+  queue: HCLSQSQueue

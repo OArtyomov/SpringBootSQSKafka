@@ -3,6 +3,7 @@ package com.hcl.hclmessaging.service.sqs;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hcl.hclmessaging.dto.SQSMessageDTO;
+import com.hcl.hclmessaging.service.config.ApplicationConfiguration;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
@@ -24,8 +25,10 @@ public class SQSService {
 
     private ObjectMapper objectMapper;
 
+    private ApplicationConfiguration applicationConfiguration;
+
     public void sendMessage() {
-        queueMessagingTemplate.send("HCLSQSQueue", buildMessage());
+        queueMessagingTemplate.send(applicationConfiguration.getSqsQueueName(), buildMessage());
     }
 
     private Message<String> buildMessage() {
