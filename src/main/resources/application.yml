@@ -6,13 +6,14 @@ spring:
           brokers: localhost:9092
           auto-create-topics: true
       bindings:
-        input:
+        input-in-0:
           destination: kafka-output
           group: exampleOfConsumerGroup
         output:
           destination: kafka-output
       default:
         contentType: application/json
+      source: input
 management:
   endpoints:
     enabled-by-default:

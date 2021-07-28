@@ -1,9 +1,9 @@
 package com.hcl.hclmessaging.service.kafka;
 
 import com.hcl.hclmessaging.dto.KafkaMessageDTO;
-import com.hcl.hclmessaging.service.ProducerBinding;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
@@ -12,15 +12,18 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.hcl.hclmessaging.utils.Constants.KAFKA_OUTPUT_BINDINGS;
+
 @Service
 @AllArgsConstructor
 @Slf4j
 public class KafkaService {
-    private ProducerBinding producerBinding;
+
+    private StreamBridge streamBridge;
 
     public void sendMessage() {
         Message<KafkaMessageDTO> message = buildMessage();
-        producerBinding.outputChannel().send(message);
+        streamBridge.send(KAFKA_OUTPUT_BINDINGS, message);
         log.info("Message is sent");
     }
 
