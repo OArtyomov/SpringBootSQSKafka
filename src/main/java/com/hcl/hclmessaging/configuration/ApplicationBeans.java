@@ -19,7 +19,6 @@ import org.springframework.messaging.handler.annotation.support.HeaderMethodArgu
 import org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver;
 import org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver;
 import org.springframework.messaging.support.GenericMessage;
-import org.springframework.util.MimeType;
 
 import java.util.ArrayList;
 import java.util.List;
