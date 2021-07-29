@@ -22,8 +22,9 @@ cloud:
       static: us-east-2
       auto: false
     credentials:
-      access-key: AKIAVCTGKVB4HLAI35FW
-      secret-key: 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
+      access-key: AAA
+      secret-key: BBB
+      ##
 
 sqs:
   queue: HCLSQSQueue
