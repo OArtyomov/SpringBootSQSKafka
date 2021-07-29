@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import static com.hcl.hclmessaging.utils.Constants.AURO_SCHEMA_PATH;
 import static com.hcl.hclmessaging.utils.Constants.KAFKA_INPUT_BINDINGS;
 
 @Configuration
@@ -57,7 +58,7 @@ public class ApplicationBeans {
     @Bean
     public MessageConverter avroMessageConverter(AvroSchemaServiceManager avroSchemaServiceManager) {
         AvroSchemaMessageConverter converter = new AvroSchemaMessageConverter(avroSchemaServiceManager);
-        converter.setSchemaLocation(new ClassPathResource("auro-schema.avsc"));
+        converter.setSchemaLocation(new ClassPathResource(AURO_SCHEMA_PATH));
         return converter;
     }
 
