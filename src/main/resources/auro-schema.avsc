@@ -1,0 +1,10 @@
+{
+    "type": "record",
+    "name": "KafkaMessageDTO",
+    "namespace": "com.hcl.hclmessaging.dto.auro",
+    "fields": [
+    {
+        "name": "name",
+        "type": "string"
+    }]
+}

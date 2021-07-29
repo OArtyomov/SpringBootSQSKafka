@@ -1,7 +1,7 @@
 package com.hcl.hclmessaging.service.sqs;
 
-import com.hcl.hclmessaging.dto.KafkaMessageDTO;
 import com.hcl.hclmessaging.dto.SQSMessageDTO;
+import com.hcl.hclmessaging.dto.auro.KafkaMessageDTO;
 import com.hcl.hclmessaging.service.kafka.KafkaService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
