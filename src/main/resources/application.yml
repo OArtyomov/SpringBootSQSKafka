@@ -28,3 +28,7 @@ cloud:
 
 sqs:
   queue: HCLSQSQueue
+
+logging:
+  level:
+    root: INFO
