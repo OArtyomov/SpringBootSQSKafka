@@ -1,4 +1,4 @@
-package com.hcl.hclmessaging.test.web;
+package com.hcl.hclmessaging.web.dto;
 
 
 import lombok.Getter;

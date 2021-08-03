@@ -1,6 +1,6 @@
 package com.hcl.hclmessaging.test;
 
-import com.hcl.hclmessaging.test.web.RequestDTO;
+import com.hcl.hclmessaging.web.dto.RequestDTO;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.core.StringContains.containsString;
