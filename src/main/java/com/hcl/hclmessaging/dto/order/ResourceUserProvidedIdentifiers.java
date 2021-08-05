@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "orderNumber"
 })
-@Generated("jsonschema2pojo")
 public class ResourceUserProvidedIdentifiers {
 
     @JsonProperty("orderNumber")

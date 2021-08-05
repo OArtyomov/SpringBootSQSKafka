@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "url",
     "dimensions"
 })
-@Generated("jsonschema2pojo")
 public class Image {
 
     @JsonProperty("url")

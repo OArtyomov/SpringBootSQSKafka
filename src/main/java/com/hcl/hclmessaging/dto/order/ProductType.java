@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
     "version"
 })
-@Generated("jsonschema2pojo")
 public class ProductType {
 
     @JsonProperty("typeId")

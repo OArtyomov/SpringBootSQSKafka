@@ -22,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "attributes",
     "assets"
 })
-@Generated("jsonschema2pojo")
 public class Variant {
 
     @JsonProperty("id")

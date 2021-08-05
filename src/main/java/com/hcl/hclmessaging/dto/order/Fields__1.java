@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({
     "channel"
 })
-@Generated("jsonschema2pojo")
 public class Fields__1 {
 
     @JsonProperty("channel")

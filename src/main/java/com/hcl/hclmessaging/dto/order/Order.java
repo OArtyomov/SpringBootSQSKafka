@@ -47,7 +47,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "itemShippingAddresses",
     "refusedGifts"
 })
-@Generated("jsonschema2pojo")
 public class Order {
 
     @JsonProperty("type")

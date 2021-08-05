@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
     "channel"
 })
-@Generated("jsonschema2pojo")
 public class Price__2 {
 
     @JsonProperty("value")

@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "taxedPrice",
     "shippingMethodState"
 })
-@Generated("jsonschema2pojo")
 public class ShippingInfo {
 
     @JsonProperty("shippingMethodName")

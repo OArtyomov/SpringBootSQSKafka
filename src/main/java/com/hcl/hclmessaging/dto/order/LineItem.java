@@ -33,7 +33,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "custom",
     "lineItemMode"
 })
-@Generated("jsonschema2pojo")
 public class LineItem {
 
     @JsonProperty("id")

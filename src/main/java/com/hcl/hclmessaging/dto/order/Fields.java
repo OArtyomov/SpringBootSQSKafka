@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "fulfillmentType",
     "storeId"
 })
-@Generated("jsonschema2pojo")
 public class Fields {
 
     @JsonProperty("fulfillmentType")

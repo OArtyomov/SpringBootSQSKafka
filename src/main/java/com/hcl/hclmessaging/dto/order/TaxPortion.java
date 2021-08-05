@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "amount",
     "name"
 })
-@Generated("jsonschema2pojo")
 public class TaxPortion {
 
     @JsonProperty("rate")

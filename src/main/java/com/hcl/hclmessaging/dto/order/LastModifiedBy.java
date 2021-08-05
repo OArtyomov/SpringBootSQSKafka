@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "clientId",
     "isPlatformClient"
 })
-@Generated("jsonschema2pojo")
 public class LastModifiedBy {
 
     @JsonProperty("clientId")

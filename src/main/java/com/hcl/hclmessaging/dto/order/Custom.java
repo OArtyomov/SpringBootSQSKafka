@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "type",
     "fields"
 })
-@Generated("jsonschema2pojo")
 public class Custom {
 
     @JsonProperty("type")

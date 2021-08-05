@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "quantity",
     "state"
 })
-@Generated("jsonschema2pojo")
 public class State {
 
     @JsonProperty("quantity")

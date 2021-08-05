@@ -23,7 +23,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "email",
     "additionalAddressInfo"
 })
-@Generated("jsonschema2pojo")
 public class ShippingAddress {
 
     @JsonProperty("firstName")

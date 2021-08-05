@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "centAmount",
     "fractionDigits"
 })
-@Generated("jsonschema2pojo")
 public class Price {
 
     @JsonProperty("type")

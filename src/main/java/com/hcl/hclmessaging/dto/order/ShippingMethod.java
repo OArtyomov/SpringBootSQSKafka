@@ -16,7 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "typeId",
     "id"
 })
-@Generated("jsonschema2pojo")
 public class ShippingMethod {
 
     @JsonProperty("typeId")

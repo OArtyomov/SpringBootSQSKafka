@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "totalGross",
     "taxPortions"
 })
-@Generated("jsonschema2pojo")
 public class TaxedPrice {
 
     @JsonProperty("totalNet")

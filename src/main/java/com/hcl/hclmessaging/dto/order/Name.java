@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "en-CA",
     "fr-CA"
 })
-@Generated("jsonschema2pojo")
 public class Name {
 
     @JsonProperty("en-US")

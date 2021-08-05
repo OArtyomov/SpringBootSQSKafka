@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "price",
     "tiers"
 })
-@Generated("jsonschema2pojo")
 public class ShippingRate {
 
     @JsonProperty("price")

@@ -26,7 +26,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "createdAt",
     "lastModifiedAt"
 })
-@Generated("jsonschema2pojo")
 public class Notification {
 
     @JsonProperty("notificationType")
