@@ -3,7 +3,6 @@ package com.hcl.hclmessaging.web;
 import com.hcl.hclmessaging.web.dto.ErrorDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
