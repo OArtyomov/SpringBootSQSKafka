@@ -1,6 +1,6 @@
 package com.hcl.hclmessaging.service.kafka;
 
-import com.hcl.hclmessaging.dto.auro.KafkaMessageDTO;
+import com.hcl.hclmessaging.dto.auro.KafkaOrderMessageDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.function.StreamBridge;
@@ -23,18 +23,18 @@ public class KafkaService {
 
     private StreamBridge streamBridge;
 
-    public void sendMessage(KafkaMessageDTO kafkaMessageDTO) {
-        Message<KafkaMessageDTO> message = buildMessage(kafkaMessageDTO);
+    public void sendMessage(KafkaOrderMessageDTO kafkaMessageDTO) {
+        Message<KafkaOrderMessageDTO> message = buildMessage(kafkaMessageDTO);
         streamBridge.send(KAFKA_OUTPUT_BINDINGS, message, DEFAULT_AVRO_MIME_TYPE);
         log.info("Message is sent to Kafka");
     }
 
-    private Message<KafkaMessageDTO> buildMessage(KafkaMessageDTO kafkaMessageDTO) {
+    private Message<KafkaOrderMessageDTO> buildMessage(KafkaOrderMessageDTO kafkaMessageDTO) {
         Map<String, Object> headersAsMap = new HashMap<>();
         return createMessage(kafkaMessageDTO, new MessageHeaders(headersAsMap));
     }
 
-    public void processConsumedMessage(GenericMessage<KafkaMessageDTO> message) {
+    public void processConsumedMessage(GenericMessage<KafkaOrderMessageDTO> message) {
         log.info("Receive message from Kafka: {}", message);
     }
 }

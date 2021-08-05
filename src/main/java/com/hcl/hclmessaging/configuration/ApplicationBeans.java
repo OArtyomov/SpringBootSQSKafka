@@ -1,7 +1,7 @@
 package com.hcl.hclmessaging.configuration;
 
 import com.amazonaws.services.sqs.AmazonSQSAsync;
-import com.hcl.hclmessaging.dto.auro.KafkaMessageDTO;
+import com.hcl.hclmessaging.dto.auro.KafkaOrderMessageDTO;
 import com.hcl.hclmessaging.service.kafka.KafkaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.aws.core.env.ResourceIdResolver;
@@ -33,7 +33,7 @@ import static com.hcl.hclmessaging.utils.Constants.KAFKA_INPUT_BINDINGS;
 public class ApplicationBeans {
 
     @Bean(KAFKA_INPUT_BINDINGS)
-    public Consumer<GenericMessage<KafkaMessageDTO>> kafkaMessageListener(KafkaService kafkaService) {
+    public Consumer<GenericMessage<KafkaOrderMessageDTO>> kafkaMessageListener(KafkaService kafkaService) {
         return kafkaService::processConsumedMessage;
     }
 
