@@ -1,6 +1,5 @@
 package com.hcl.hclmessaging.web;
 
-import com.hcl.hclmessaging.service.sqs.SQSService;
 import com.hcl.hclmessaging.web.dto.RequestDTO;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -17,13 +16,6 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SendMessageController {
-
-    private SQSService sqsService;
-
-    @RequestMapping("/sendToSQS")
-    public void sendMessageToSQS() {
-        sqsService.sendMessage();
-    }
 
     @RequestMapping(value = "/raiseMethodArgumentNotValid", method = RequestMethod.POST)
     public void checkMethodArgumentNotValid(@Valid RequestDTO requestDTO) {

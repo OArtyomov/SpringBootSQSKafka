@@ -1,6 +1,7 @@
 package com.hcl.hclmessaging.service.sqs;
 
-import com.hcl.hclmessaging.dto.SQSMessageDTO;
+import com.hcl.hclmessaging.dto.order.Notification;
+import com.hcl.hclmessaging.dto.order.SQSMessageDTO;
 import com.hcl.hclmessaging.dto.auro.KafkaMessageDTO;
 import com.hcl.hclmessaging.service.kafka.KafkaService;
 import lombok.AllArgsConstructor;
@@ -22,15 +23,15 @@ public class SQSMessagesListener {
     private KafkaService kafkaService;
 
     @SqsListener(value = "${sqs.queue}", deletionPolicy = ON_SUCCESS)
-    public void processMessage(@Payload SQSMessageDTO dto, @Headers Map<String, String> headers) {
+    public void processMessage(@Payload Notification dto, @Headers Map<String, String> headers) {
         log.info("Receive message from SQS: {}", dto);
         log.info("Headers: {}", headers);
         kafkaService.sendMessage(convert(dto));
     }
 
-    private KafkaMessageDTO convert(SQSMessageDTO input) {
+    private KafkaMessageDTO convert(Notification input) {
         KafkaMessageDTO dto = new KafkaMessageDTO();
-        dto.setName(input.getName());
+        dto.setName("AAAA");
         return dto;
     }
 }

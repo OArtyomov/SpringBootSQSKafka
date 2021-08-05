@@ -1,0 +1,765 @@
+{
+  "notificationType": "Message",
+  "projectKey": "lululemon-poc-v2",
+  "id": "08f13ba7-e33a-40e1-acec-ca2697aa6df8",
+  "version": 1,
+  "sequenceNumber": 1,
+  "resource": {
+    "typeId": "order",
+    "id": "2d6d259e-3b9f-458d-affa-ead32473fbd1"
+  },
+  "resourceVersion": 1,
+  "resourceUserProvidedIdentifiers": {
+    "orderNumber": "28975"
+  },
+  "type": "OrderCreated",
+  "order": {
+    "type": "Order",
+    "id": "2d6d259e-3b9f-458d-affa-ead32473fbd1",
+    "version": 1,
+    "lastMessageSequenceNumber": 1,
+    "createdAt": "2021-08-04T13:14:56.714Z",
+    "lastModifiedAt": "2021-08-04T13:14:56.714Z",
+    "lastModifiedBy": {
+      "clientId": "mqSKViV4jFxXHU4TiEOCwyaE",
+      "isPlatformClient": false
+    },
+    "createdBy": {
+      "clientId": "mqSKViV4jFxXHU4TiEOCwyaE",
+      "isPlatformClient": false
+    },
+    "orderNumber": "28975",
+    "totalPrice": {
+      "type": "centPrecision",
+      "currencyCode": "USD",
+      "centAmount": 47200,
+      "fractionDigits": 2
+    },
+    "taxedPrice": {
+      "totalNet": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 47200,
+        "fractionDigits": 2
+      },
+      "totalGross": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 47200,
+        "fractionDigits": 2
+      },
+      "taxPortions": [
+        {
+          "rate": 0,
+          "amount": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 0,
+            "fractionDigits": 2
+          },
+          "name": "Disabled tax calculation"
+        }
+      ]
+    },
+    "country": "US",
+    "orderState": "Open",
+    "syncInfo": [],
+    "returnInfo": [],
+    "shippingInfo": {
+      "shippingMethodName": "Express Shipping",
+      "price": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 2000,
+        "fractionDigits": 2
+      },
+      "shippingRate": {
+        "price": {
+          "type": "centPrecision",
+          "currencyCode": "USD",
+          "centAmount": 2000,
+          "fractionDigits": 2
+        },
+        "tiers": []
+      },
+      "taxRate": {
+        "name": "Disabled tax calculation",
+        "amount": 0,
+        "includedInPrice": false,
+        "country": "US",
+        "state": "Washington",
+        "subRates": []
+      },
+      "deliveries": [],
+      "shippingMethod": {
+        "typeId": "shipping-method",
+        "id": "ae55895e-8232-42cc-a0b7-6358c59f3bb6"
+      },
+      "taxedPrice": {
+        "totalNet": {
+          "type": "centPrecision",
+          "currencyCode": "USD",
+          "centAmount": 2000,
+          "fractionDigits": 2
+        },
+        "totalGross": {
+          "type": "centPrecision",
+          "currencyCode": "USD",
+          "centAmount": 2000,
+          "fractionDigits": 2
+        }
+      },
+      "shippingMethodState": "MatchesCart"
+    },
+    "taxMode": "Disabled",
+    "inventoryMode": "None",
+    "taxRoundingMode": "HalfEven",
+    "taxCalculationMode": "LineItemLevel",
+    "origin": "Customer",
+    "lineItems": [
+      {
+        "id": "3628418c-bcbe-4f00-a3a4-cd85e8ab23f4",
+        "productId": "ff85b920-bdb0-49a8-b9c6-75c5f3036464",
+        "name": {
+          "en-US": "It's Rulu Mock Neck Dress",
+          "en-CA": "It's Rulu Mock Neck Dress",
+          "fr-CA": "It's Rulu Mock Neck Dress"
+        },
+        "productType": {
+          "typeId": "product-type",
+          "id": "27a7e58e-1fe5-41c6-9651-9fc05a49f73b",
+          "version": 44
+        },
+        "variant": {
+          "id": 2,
+          "sku": "113400039",
+          "key": "113400039",
+          "prices": [
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 11500,
+                "fractionDigits": 2
+              },
+              "id": "f6bfe401-7630-47d8-be8d-b0501926ce03",
+              "channel": {
+                "typeId": "channel",
+                "id": "30586bcf-d3d8-432b-853a-67531279afdb"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 11800,
+                "fractionDigits": 2
+              },
+              "id": "f56c1dfd-dec2-442d-8e8a-4312d0c6d2e0",
+              "channel": {
+                "typeId": "channel",
+                "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "CAD",
+                "centAmount": 13000,
+                "fractionDigits": 2
+              },
+              "id": "769d5d0d-b42a-45f8-810a-01dcd43b9fbd",
+              "channel": {
+                "typeId": "channel",
+                "id": "30586bcf-d3d8-432b-853a-67531279afdb"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "CAD",
+                "centAmount": 13000,
+                "fractionDigits": 2
+              },
+              "id": "f212942f-db33-4b3a-b28e-5761ee5da024",
+              "channel": {
+                "typeId": "channel",
+                "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+              }
+            }
+          ],
+          "images": [
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LW1CGNS_0001_1",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LW1CGNS_0001_2",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LW1CGNS_0001_3",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LW1CGNS_0001_4",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LW1CGNS_0001_5",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "isAvailable",
+              "value": true
+            },
+            {
+              "name": "bazaarVoiceId",
+              "value": "It's_Rulu_Mock_Neck_Dress"
+            },
+            {
+              "name": "reversible",
+              "value": false
+            },
+            {
+              "name": "silverescent",
+              "value": false
+            },
+            {
+              "name": "limitedEdition",
+              "value": false
+            },
+            {
+              "name": "onlineOnly",
+              "value": false
+            },
+            {
+              "name": "specialEdition",
+              "value": false
+            },
+            {
+              "name": "colorCode",
+              "value": "0001"
+            },
+            {
+              "name": "colorDisplayName",
+              "value": "Black"
+            },
+            {
+              "name": "colorDescription",
+              "value": "0001 - BLK BLK"
+            },
+            {
+              "name": "size",
+              "value": "2"
+            },
+            {
+              "name": "sizeName",
+              "value": "2"
+            },
+            {
+              "name": "styleId",
+              "value": "LW1CGNS-0001"
+            },
+            {
+              "name": "styleNumber",
+              "value": "LW1CGNS"
+            },
+            {
+              "name": "productUrl",
+              "value": "/p/skirts-and-dresses-dresses/Its-Rulu-Mock-Neck-Dress-MD/_/prod9770174?color=LW1CGNS-0001&skuId=113400039"
+            },
+            {
+              "name": "isHazmat",
+              "value": false
+            },
+            {
+              "name": "isIneligible",
+              "value": false
+            },
+            {
+              "name": "nonReturnable",
+              "value": false
+            },
+            {
+              "name": "isLowStock",
+              "value": false
+            },
+            {
+              "name": "freeReturnShipping",
+              "value": false
+            },
+            {
+              "name": "hasLinkedProducts",
+              "value": false
+            },
+            {
+              "name": "wwmt",
+              "value": "Nothing gets you out the door after training faster than a one-and-done dress. Soft, technical Rulu fabric wicks away the last drops of sweat."
+            },
+            {
+              "name": "isGiftCard",
+              "value": false
+            },
+            {
+              "name": "isMembershipProduct",
+              "value": false
+            },
+            {
+              "name": "ineligibleProduct",
+              "value": false
+            },
+            {
+              "name": "loyaltyProduct",
+              "value": false
+            },
+            {
+              "name": "gender",
+              "value": "women"
+            },
+            {
+              "name": "htmlSizeChartId",
+              "value": "women"
+            }
+          ],
+          "assets": []
+        },
+        "price": {
+          "value": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 11800,
+            "fractionDigits": 2
+          },
+          "id": "f56c1dfd-dec2-442d-8e8a-4312d0c6d2e0",
+          "channel": {
+            "typeId": "channel",
+            "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+          }
+        },
+        "quantity": 2,
+        "discountedPricePerQuantity": [],
+        "distributionChannel": {
+          "typeId": "channel",
+          "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+        },
+        "taxRate": {
+          "name": "Disabled tax calculation",
+          "amount": 0,
+          "includedInPrice": false,
+          "country": "US",
+          "state": "Washington",
+          "subRates": []
+        },
+        "addedAt": "2021-08-04T13:13:00.466Z",
+        "lastModifiedAt": "2021-08-04T13:13:54.028Z",
+        "state": [
+          {
+            "quantity": 2,
+            "state": {
+              "typeId": "state",
+              "id": "9f007a47-dd38-4380-b286-64adc2dbdec4"
+            }
+          }
+        ],
+        "priceMode": "Platform",
+        "totalPrice": {
+          "type": "centPrecision",
+          "currencyCode": "USD",
+          "centAmount": 23600,
+          "fractionDigits": 2
+        },
+        "taxedPrice": {
+          "totalNet": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 23600,
+            "fractionDigits": 2
+          },
+          "totalGross": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 23600,
+            "fractionDigits": 2
+          }
+        },
+        "custom": {
+          "type": {
+            "typeId": "type",
+            "id": "bf2d9fab-f805-41ee-9560-191d0ced5b82"
+          },
+          "fields": {
+            "fulfillmentType": "ship"
+          }
+        },
+        "lineItemMode": "Standard"
+      },
+      {
+        "id": "e9dc5373-a89f-4758-bfb0-606ec85eaaee",
+        "productId": "328ddddb-3aa6-4e85-98cc-52d2a881de34",
+        "name": {
+          "en-US": "City Sweat Crew",
+          "en-CA": "City Sweat Crew",
+          "fr-CA": "City Sweat Crew"
+        },
+        "productType": {
+          "typeId": "product-type",
+          "id": "27a7e58e-1fe5-41c6-9651-9fc05a49f73b",
+          "version": 44
+        },
+        "variant": {
+          "id": 1,
+          "sku": "114826224",
+          "key": "114826224",
+          "prices": [
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 10800,
+                "fractionDigits": 2
+              },
+              "id": "c8a92819-2cf7-4834-b901-1ce3b72aae5f",
+              "channel": {
+                "typeId": "channel",
+                "id": "30586bcf-d3d8-432b-853a-67531279afdb"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "USD",
+                "centAmount": 10800,
+                "fractionDigits": 2
+              },
+              "id": "393af0b1-5af3-47cf-8dea-30417d116473",
+              "channel": {
+                "typeId": "channel",
+                "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "CAD",
+                "centAmount": 13000,
+                "fractionDigits": 2
+              },
+              "id": "78677c2f-6d86-4cbd-a5f0-885f0cd56ee8",
+              "channel": {
+                "typeId": "channel",
+                "id": "30586bcf-d3d8-432b-853a-67531279afdb"
+              }
+            },
+            {
+              "value": {
+                "type": "centPrecision",
+                "currencyCode": "CAD",
+                "centAmount": 13000,
+                "fractionDigits": 2
+              },
+              "id": "c666f128-2ef2-4fcb-8e1f-b17b3ef20830",
+              "channel": {
+                "typeId": "channel",
+                "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+              }
+            }
+          ],
+          "images": [
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LM3BUGS_0001_1",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LM3BUGS_0001_2",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LM3BUGS_0001_3",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LM3BUGS_0001_4",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            },
+            {
+              "url": "https://images.lululemon.com/is/image/lululemon/LM3BUGS_0001_5",
+              "dimensions": {
+                "w": 1800,
+                "h": 2160
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "bazaarVoiceId",
+              "value": "City_Sweat_Crew_New"
+            },
+            {
+              "name": "isAvailable",
+              "value": true
+            },
+            {
+              "name": "reversible",
+              "value": false
+            },
+            {
+              "name": "silverescent",
+              "value": false
+            },
+            {
+              "name": "onlineOnly",
+              "value": false
+            },
+            {
+              "name": "limitedEdition",
+              "value": false
+            },
+            {
+              "name": "specialEdition",
+              "value": false
+            },
+            {
+              "name": "colorCode",
+              "value": "0001"
+            },
+            {
+              "name": "colorDisplayName",
+              "value": "Black"
+            },
+            {
+              "name": "colorDescription",
+              "value": "0001 - BLK BLK"
+            },
+            {
+              "name": "size",
+              "value": "XS"
+            },
+            {
+              "name": "sizeName",
+              "value": "XS"
+            },
+            {
+              "name": "styleId",
+              "value": "LM3BUGS-0001"
+            },
+            {
+              "name": "styleNumber",
+              "value": "LM3BUGS"
+            },
+            {
+              "name": "productUrl",
+              "value": "/p/mens-jackets-and-hoodies-hoodies/City-Sweat-Crew/_/prod7390325?color=LM3BUGS-0001&skuId=114826224"
+            },
+            {
+              "name": "isHazmat",
+              "value": false
+            },
+            {
+              "name": "isIneligible",
+              "value": false
+            },
+            {
+              "name": "nonReturnable",
+              "value": false
+            },
+            {
+              "name": "isLowStock",
+              "value": false
+            },
+            {
+              "name": "freeReturnShipping",
+              "value": false
+            },
+            {
+              "name": "hasLinkedProducts",
+              "value": false
+            },
+            {
+              "name": "wwmt",
+              "value": "If a soft crew neck sweater is a must-have—a soft crew neck sweater that’s breathable and four-way stretch is a must-have-right-now."
+            },
+            {
+              "name": "isGiftCard",
+              "value": false
+            },
+            {
+              "name": "ineligibleProduct",
+              "value": false
+            },
+            {
+              "name": "isMembershipProduct",
+              "value": false
+            },
+            {
+              "name": "loyaltyProduct",
+              "value": false
+            },
+            {
+              "name": "gender",
+              "value": "Male"
+            },
+            {
+              "name": "htmlSizeChartId",
+              "value": "Male"
+            },
+            {
+              "name": "prdContent",
+              "value": "<p><strong>Not quite right? Send it back! We offer <a href=\\\"https://www.lululemon.com/about/faq?icid=pdpcontent;freereturns/#faq-returns\\\">free returns</a>.</strong></p><br/><h2 class=\\\"product-content-subtitle\\\">why we made this</h2>\\t\\t\\t<div class=\\\"why-we-made-this\\\">  <p>Whether you're on your way to a pre-work training session or heading home from late-night lifting, you'll find this crewneck essential. Naturally breathable Stretch French Terry fabric is sweat-wicking to help  you stay comfortable before and after any type of training.</p></div><h2 class=\\\"product-content-subtitle\\\">fabric + features</h2><div class=\\\"product content\\\"><ul>  <li>this version of our Stretch French Terry fabric is  four-way stretch with added LYCRA&reg; fibre for shape-retention</li>  <li>subtle reflective details help keep you visible in low light</li>  <li>imported</li></ul></div></td></tr><h2 class=\\\"product-content-subtitle\\\">fit + function</h2><div class=\\\"product content\\\"><ul><li><b>designed for: </b>post sweat&#8212;easy-to-layer gear made for cool down comfort</li><li><b>fabric(s): </b><div class=\\\"term\\\" rel=\\\"STRETCHFRENCHTERRY\\\" style=\\\"display: inline\\\">Stretch French Terry</div></li><li><b>hemmable: </b>yes</li></ul></div>"
+            }
+          ],
+          "assets": []
+        },
+        "price": {
+          "value": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 10800,
+            "fractionDigits": 2
+          },
+          "id": "393af0b1-5af3-47cf-8dea-30417d116473",
+          "channel": {
+            "typeId": "channel",
+            "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+          }
+        },
+        "quantity": 2,
+        "discountedPricePerQuantity": [],
+        "distributionChannel": {
+          "typeId": "channel",
+          "id": "ab513591-1097-4f6c-b3c2-d847a4d8edcd"
+        },
+        "taxRate": {
+          "name": "Disabled tax calculation",
+          "amount": 0,
+          "includedInPrice": false,
+          "country": "US",
+          "state": "Washington",
+          "subRates": []
+        },
+        "addedAt": "2021-08-04T13:13:13.199Z",
+        "lastModifiedAt": "2021-08-04T13:13:13.199Z",
+        "state": [
+          {
+            "quantity": 2,
+            "state": {
+              "typeId": "state",
+              "id": "9f007a47-dd38-4380-b286-64adc2dbdec4"
+            }
+          }
+        ],
+        "priceMode": "Platform",
+        "totalPrice": {
+          "type": "centPrecision",
+          "currencyCode": "USD",
+          "centAmount": 21600,
+          "fractionDigits": 2
+        },
+        "taxedPrice": {
+          "totalNet": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 21600,
+            "fractionDigits": 2
+          },
+          "totalGross": {
+            "type": "centPrecision",
+            "currencyCode": "USD",
+            "centAmount": 21600,
+            "fractionDigits": 2
+          }
+        },
+        "custom": {
+          "type": {
+            "typeId": "type",
+            "id": "bf2d9fab-f805-41ee-9560-191d0ced5b82"
+          },
+          "fields": {
+            "storeId": "10013",
+            "fulfillmentType": "bopis"
+          }
+        },
+        "lineItemMode": "Standard"
+      }
+    ],
+    "customLineItems": [],
+    "transactionFee": true,
+    "discountCodes": [],
+    "cart": {
+      "typeId": "cart",
+      "id": "16f93592-6a37-45f2-99f6-674af7dfb7e5"
+    },
+    "custom": {
+      "type": {
+        "typeId": "type",
+        "id": "1b6b275b-1cd5-4ed6-aa02-33cbe7d98739"
+      },
+      "fields": {
+        "channel": "web"
+      }
+    },
+    "paymentInfo": {
+      "payments": [
+        {
+          "typeId": "payment",
+          "id": "01d91f75-2254-4014-b458-e188f8e33ea1"
+        }
+      ]
+    },
+    "shippingAddress": {
+      "firstName": "Rohit",
+      "lastName": "Singh",
+      "streetName": "2501 140th Ave East",
+      "city": "Sumner",
+      "state": "Washington",
+      "country": "US",
+      "phone": "4162341231",
+      "email": "rohitsingh@lululemon.com",
+      "additionalAddressInfo": "98390"
+    },
+    "billingAddress": {
+      "firstName": "Rohit",
+      "lastName": "Singh",
+      "streetName": "2501 140th Ave East",
+      "city": "Sumner",
+      "state": "Washington",
+      "country": "US",
+      "phone": "4162341231",
+      "email": "rohitsingh@lululemon.com",
+      "additionalAddressInfo": "98390"
+    },
+    "itemShippingAddresses": [],
+    "refusedGifts": []
+  },
+  "createdAt": "2021-08-04T13:14:57.611Z",
+  "lastModifiedAt": "2021-08-04T13:14:57.611Z"
+}

@@ -1,4 +1,4 @@
-package com.hcl.hclmessaging.dto;
+package com.hcl.hclmessaging.dto.order;
 
 import lombok.Getter;
 import lombok.Setter;
