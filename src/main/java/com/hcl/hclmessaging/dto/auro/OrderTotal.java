@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 2816689033649115519L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderTotal\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"subtotal\",\"type\":\"int\"},{\"name\":\"tax\",\"type\":\"int\"},{\"name\":\"shipping\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"total\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = 6945565142243012749L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderTotal\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"subtotal\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2},{\"name\":\"tax\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":4,\"java-class\":\"java.math.BigDecimal\",\"scale\":2},{\"name\":\"shipping\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2},{\"name\":\"discount\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2},{\"name\":\"total\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,11 +52,11 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   @Deprecated public java.lang.CharSequence currencyCode;
-  @Deprecated public int subtotal;
-  @Deprecated public int tax;
-  @Deprecated public int shipping;
-  @Deprecated public int discount;
-  @Deprecated public int total;
+  @Deprecated public java.nio.ByteBuffer subtotal;
+  @Deprecated public java.nio.ByteBuffer tax;
+  @Deprecated public java.nio.ByteBuffer shipping;
+  @Deprecated public java.nio.ByteBuffer discount;
+  @Deprecated public java.nio.ByteBuffer total;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -74,7 +74,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * @param discount The new value for discount
    * @param total The new value for total
    */
-  public OrderTotal(java.lang.CharSequence currencyCode, java.lang.Integer subtotal, java.lang.Integer tax, java.lang.Integer shipping, java.lang.Integer discount, java.lang.Integer total) {
+  public OrderTotal(java.lang.CharSequence currencyCode, java.nio.ByteBuffer subtotal, java.nio.ByteBuffer tax, java.nio.ByteBuffer shipping, java.nio.ByteBuffer discount, java.nio.ByteBuffer total) {
     this.currencyCode = currencyCode;
     this.subtotal = subtotal;
     this.tax = tax;
@@ -102,11 +102,11 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: currencyCode = (java.lang.CharSequence)value$; break;
-    case 1: subtotal = (java.lang.Integer)value$; break;
-    case 2: tax = (java.lang.Integer)value$; break;
-    case 3: shipping = (java.lang.Integer)value$; break;
-    case 4: discount = (java.lang.Integer)value$; break;
-    case 5: total = (java.lang.Integer)value$; break;
+    case 1: subtotal = (java.nio.ByteBuffer)value$; break;
+    case 2: tax = (java.nio.ByteBuffer)value$; break;
+    case 3: shipping = (java.nio.ByteBuffer)value$; break;
+    case 4: discount = (java.nio.ByteBuffer)value$; break;
+    case 5: total = (java.nio.ByteBuffer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -131,7 +131,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'subtotal' field.
    * @return The value of the 'subtotal' field.
    */
-  public java.lang.Integer getSubtotal() {
+  public java.nio.ByteBuffer getSubtotal() {
     return subtotal;
   }
 
@@ -139,7 +139,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'subtotal' field.
    * @param value the value to set.
    */
-  public void setSubtotal(java.lang.Integer value) {
+  public void setSubtotal(java.nio.ByteBuffer value) {
     this.subtotal = value;
   }
 
@@ -147,7 +147,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'tax' field.
    * @return The value of the 'tax' field.
    */
-  public java.lang.Integer getTax() {
+  public java.nio.ByteBuffer getTax() {
     return tax;
   }
 
@@ -155,7 +155,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'tax' field.
    * @param value the value to set.
    */
-  public void setTax(java.lang.Integer value) {
+  public void setTax(java.nio.ByteBuffer value) {
     this.tax = value;
   }
 
@@ -163,7 +163,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'shipping' field.
    * @return The value of the 'shipping' field.
    */
-  public java.lang.Integer getShipping() {
+  public java.nio.ByteBuffer getShipping() {
     return shipping;
   }
 
@@ -171,7 +171,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'shipping' field.
    * @param value the value to set.
    */
-  public void setShipping(java.lang.Integer value) {
+  public void setShipping(java.nio.ByteBuffer value) {
     this.shipping = value;
   }
 
@@ -179,7 +179,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'discount' field.
    * @return The value of the 'discount' field.
    */
-  public java.lang.Integer getDiscount() {
+  public java.nio.ByteBuffer getDiscount() {
     return discount;
   }
 
@@ -187,7 +187,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'discount' field.
    * @param value the value to set.
    */
-  public void setDiscount(java.lang.Integer value) {
+  public void setDiscount(java.nio.ByteBuffer value) {
     this.discount = value;
   }
 
@@ -195,7 +195,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'total' field.
    * @return The value of the 'total' field.
    */
-  public java.lang.Integer getTotal() {
+  public java.nio.ByteBuffer getTotal() {
     return total;
   }
 
@@ -203,7 +203,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'total' field.
    * @param value the value to set.
    */
-  public void setTotal(java.lang.Integer value) {
+  public void setTotal(java.nio.ByteBuffer value) {
     this.total = value;
   }
 
@@ -240,11 +240,11 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
     implements org.apache.avro.data.RecordBuilder<OrderTotal> {
 
     private java.lang.CharSequence currencyCode;
-    private int subtotal;
-    private int tax;
-    private int shipping;
-    private int discount;
-    private int total;
+    private java.nio.ByteBuffer subtotal;
+    private java.nio.ByteBuffer tax;
+    private java.nio.ByteBuffer shipping;
+    private java.nio.ByteBuffer discount;
+    private java.nio.ByteBuffer total;
 
     /** Creates a new Builder */
     private Builder() {
@@ -358,7 +358,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'subtotal' field.
       * @return The value.
       */
-    public java.lang.Integer getSubtotal() {
+    public java.nio.ByteBuffer getSubtotal() {
       return subtotal;
     }
 
@@ -367,7 +367,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'subtotal'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setSubtotal(int value) {
+    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setSubtotal(java.nio.ByteBuffer value) {
       validate(fields()[1], value);
       this.subtotal = value;
       fieldSetFlags()[1] = true;
@@ -388,6 +388,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder clearSubtotal() {
+      subtotal = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -396,7 +397,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'tax' field.
       * @return The value.
       */
-    public java.lang.Integer getTax() {
+    public java.nio.ByteBuffer getTax() {
       return tax;
     }
 
@@ -405,7 +406,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'tax'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setTax(int value) {
+    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setTax(java.nio.ByteBuffer value) {
       validate(fields()[2], value);
       this.tax = value;
       fieldSetFlags()[2] = true;
@@ -426,6 +427,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder clearTax() {
+      tax = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -434,7 +436,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'shipping' field.
       * @return The value.
       */
-    public java.lang.Integer getShipping() {
+    public java.nio.ByteBuffer getShipping() {
       return shipping;
     }
 
@@ -443,7 +445,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'shipping'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setShipping(int value) {
+    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setShipping(java.nio.ByteBuffer value) {
       validate(fields()[3], value);
       this.shipping = value;
       fieldSetFlags()[3] = true;
@@ -464,6 +466,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder clearShipping() {
+      shipping = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -472,7 +475,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'discount' field.
       * @return The value.
       */
-    public java.lang.Integer getDiscount() {
+    public java.nio.ByteBuffer getDiscount() {
       return discount;
     }
 
@@ -481,7 +484,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'discount'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setDiscount(int value) {
+    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setDiscount(java.nio.ByteBuffer value) {
       validate(fields()[4], value);
       this.discount = value;
       fieldSetFlags()[4] = true;
@@ -502,6 +505,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder clearDiscount() {
+      discount = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -510,7 +514,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'total' field.
       * @return The value.
       */
-    public java.lang.Integer getTotal() {
+    public java.nio.ByteBuffer getTotal() {
       return total;
     }
 
@@ -519,7 +523,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'total'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setTotal(int value) {
+    public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder setTotal(java.nio.ByteBuffer value) {
       validate(fields()[5], value);
       this.total = value;
       fieldSetFlags()[5] = true;
@@ -540,6 +544,7 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.OrderTotal.Builder clearTotal() {
+      total = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -550,11 +555,11 @@ public class OrderTotal extends org.apache.avro.specific.SpecificRecordBase impl
       try {
         OrderTotal record = new OrderTotal();
         record.currencyCode = fieldSetFlags()[0] ? this.currencyCode : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.subtotal = fieldSetFlags()[1] ? this.subtotal : (java.lang.Integer) defaultValue(fields()[1]);
-        record.tax = fieldSetFlags()[2] ? this.tax : (java.lang.Integer) defaultValue(fields()[2]);
-        record.shipping = fieldSetFlags()[3] ? this.shipping : (java.lang.Integer) defaultValue(fields()[3]);
-        record.discount = fieldSetFlags()[4] ? this.discount : (java.lang.Integer) defaultValue(fields()[4]);
-        record.total = fieldSetFlags()[5] ? this.total : (java.lang.Integer) defaultValue(fields()[5]);
+        record.subtotal = fieldSetFlags()[1] ? this.subtotal : (java.nio.ByteBuffer) defaultValue(fields()[1]);
+        record.tax = fieldSetFlags()[2] ? this.tax : (java.nio.ByteBuffer) defaultValue(fields()[2]);
+        record.shipping = fieldSetFlags()[3] ? this.shipping : (java.nio.ByteBuffer) defaultValue(fields()[3]);
+        record.discount = fieldSetFlags()[4] ? this.discount : (java.nio.ByteBuffer) defaultValue(fields()[4]);
+        record.total = fieldSetFlags()[5] ? this.total : (java.nio.ByteBuffer) defaultValue(fields()[5]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

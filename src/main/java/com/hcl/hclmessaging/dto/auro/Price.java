@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Price extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2468659167562511844L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Price\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = 533052562588767987L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Price\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,7 +52,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
   }
 
   @Deprecated public java.lang.CharSequence currencyCode;
-  @Deprecated public int price;
+  @Deprecated public java.nio.ByteBuffer price;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -66,7 +66,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
    * @param currencyCode The new value for currencyCode
    * @param price The new value for price
    */
-  public Price(java.lang.CharSequence currencyCode, java.lang.Integer price) {
+  public Price(java.lang.CharSequence currencyCode, java.nio.ByteBuffer price) {
     this.currencyCode = currencyCode;
     this.price = price;
   }
@@ -86,7 +86,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: currencyCode = (java.lang.CharSequence)value$; break;
-    case 1: price = (java.lang.Integer)value$; break;
+    case 1: price = (java.nio.ByteBuffer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -111,7 +111,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'price' field.
    * @return The value of the 'price' field.
    */
-  public java.lang.Integer getPrice() {
+  public java.nio.ByteBuffer getPrice() {
     return price;
   }
 
@@ -119,7 +119,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
    * Sets the value of the 'price' field.
    * @param value the value to set.
    */
-  public void setPrice(java.lang.Integer value) {
+  public void setPrice(java.nio.ByteBuffer value) {
     this.price = value;
   }
 
@@ -156,7 +156,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
     implements org.apache.avro.data.RecordBuilder<Price> {
 
     private java.lang.CharSequence currencyCode;
-    private int price;
+    private java.nio.ByteBuffer price;
 
     /** Creates a new Builder */
     private Builder() {
@@ -238,7 +238,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
       * Gets the value of the 'price' field.
       * @return The value.
       */
-    public java.lang.Integer getPrice() {
+    public java.nio.ByteBuffer getPrice() {
       return price;
     }
 
@@ -247,7 +247,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'price'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Price.Builder setPrice(int value) {
+    public com.hcl.hclmessaging.dto.auro.Price.Builder setPrice(java.nio.ByteBuffer value) {
       validate(fields()[1], value);
       this.price = value;
       fieldSetFlags()[1] = true;
@@ -268,6 +268,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.Price.Builder clearPrice() {
+      price = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -278,7 +279,7 @@ public class Price extends org.apache.avro.specific.SpecificRecordBase implement
       try {
         Price record = new Price();
         record.currencyCode = fieldSetFlags()[0] ? this.currencyCode : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.price = fieldSetFlags()[1] ? this.price : (java.lang.Integer) defaultValue(fields()[1]);
+        record.price = fieldSetFlags()[1] ? this.price : (java.nio.ByteBuffer) defaultValue(fields()[1]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

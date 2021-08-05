@@ -110,15 +110,27 @@
                                     },
                                     {
                                       "name": "itemPriceBeforeDiscount",
-                                      "type": "int"
+                                      "type": "bytes",
+                                      "java-class": "java.math.BigDecimal",
+                                      "logicalType": "decimal",
+                                      "precision": 4,
+                                      "scale": 2
                                     },
                                     {
                                       "name": "discount",
-                                      "type": "int"
+                                      "type": "bytes",
+                                      "java-class": "java.math.BigDecimal",
+                                        "logicalType": "decimal",
+                                        "precision": 4,
+                                        "scale": 2
                                     },
                                     {
                                       "name": "itemPriceAfterDiscount",
-                                      "type": "int"
+                                      "type": "bytes",
+                                      "java-class": "java.math.BigDecimal",
+                                        "logicalType": "decimal",
+                                        "precision": 4,
+                                        "scale": 2
                                     }
                                   ]
                                 }
@@ -169,7 +181,11 @@
                             },
                             {
                               "name": "price",
-                              "type": "int"
+                              "type": "bytes",
+                                "logicalType": "decimal",
+                                "java-class": "java.math.BigDecimal",
+                                "precision": 4,
+                                "scale": 2
                             }
                           ]
                         }
@@ -267,23 +283,44 @@
                       },
                       {
                         "name": "subtotal",
-                        "type": "int"
+                        "type": "bytes",
+                          "logicalType": "decimal",
+                          "java-class": "java.math.BigDecimal",
+                          "precision": 4,
+                          "scale": 2
                       },
                       {
                         "name": "tax",
-                        "type": "int"
+                        "type": "bytes",
+                          "logicalType": "decimal",
+                          "precision": 4,
+                          "java-class": "java.math.BigDecimal",
+                          "scale": 2
                       },
                       {
                         "name": "shipping",
-                        "type": "int"
+                        "type": "bytes",
+                          "logicalType": "decimal",
+                          "java-class": "java.math.BigDecimal",
+                          "precision": 4,
+                          "scale": 2
                       },
                       {
                         "name": "discount",
-                        "type": "int"
+                        "type": "bytes",
+                          "logicalType": "decimal",
+
+                          "java-class": "java.math.BigDecimal",
+                          "precision": 4,
+                          "scale": 2
                       },
                       {
                         "name": "total",
-                        "type": "int"
+                        "type": "bytes",
+                          "logicalType": "decimal",
+                          "java-class": "java.math.BigDecimal",
+                          "precision": 4,
+                          "scale": 2
                       }
                     ]
                   }

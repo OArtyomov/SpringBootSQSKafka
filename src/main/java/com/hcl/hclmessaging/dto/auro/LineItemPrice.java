@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3042695822170418946L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItemPrice\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"int\"}]}");
+  private static final long serialVersionUID = -6965772426444932838L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LineItemPrice\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"bytes\",\"java-class\":\"java.math.BigDecimal\",\"logicalType\":\"decimal\",\"precision\":4,\"scale\":2},{\"name\":\"discount\",\"type\":\"bytes\",\"java-class\":\"java.math.BigDecimal\",\"logicalType\":\"decimal\",\"precision\":4,\"scale\":2},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"bytes\",\"java-class\":\"java.math.BigDecimal\",\"logicalType\":\"decimal\",\"precision\":4,\"scale\":2}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -52,9 +52,9 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
   }
 
   @Deprecated public java.lang.CharSequence currencyCode;
-  @Deprecated public int itemPriceBeforeDiscount;
-  @Deprecated public int discount;
-  @Deprecated public int itemPriceAfterDiscount;
+  @Deprecated public java.nio.ByteBuffer itemPriceBeforeDiscount;
+  @Deprecated public java.nio.ByteBuffer discount;
+  @Deprecated public java.nio.ByteBuffer itemPriceAfterDiscount;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -70,7 +70,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * @param discount The new value for discount
    * @param itemPriceAfterDiscount The new value for itemPriceAfterDiscount
    */
-  public LineItemPrice(java.lang.CharSequence currencyCode, java.lang.Integer itemPriceBeforeDiscount, java.lang.Integer discount, java.lang.Integer itemPriceAfterDiscount) {
+  public LineItemPrice(java.lang.CharSequence currencyCode, java.nio.ByteBuffer itemPriceBeforeDiscount, java.nio.ByteBuffer discount, java.nio.ByteBuffer itemPriceAfterDiscount) {
     this.currencyCode = currencyCode;
     this.itemPriceBeforeDiscount = itemPriceBeforeDiscount;
     this.discount = discount;
@@ -94,9 +94,9 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: currencyCode = (java.lang.CharSequence)value$; break;
-    case 1: itemPriceBeforeDiscount = (java.lang.Integer)value$; break;
-    case 2: discount = (java.lang.Integer)value$; break;
-    case 3: itemPriceAfterDiscount = (java.lang.Integer)value$; break;
+    case 1: itemPriceBeforeDiscount = (java.nio.ByteBuffer)value$; break;
+    case 2: discount = (java.nio.ByteBuffer)value$; break;
+    case 3: itemPriceAfterDiscount = (java.nio.ByteBuffer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -121,7 +121,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'itemPriceBeforeDiscount' field.
    * @return The value of the 'itemPriceBeforeDiscount' field.
    */
-  public java.lang.Integer getItemPriceBeforeDiscount() {
+  public java.nio.ByteBuffer getItemPriceBeforeDiscount() {
     return itemPriceBeforeDiscount;
   }
 
@@ -129,7 +129,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Sets the value of the 'itemPriceBeforeDiscount' field.
    * @param value the value to set.
    */
-  public void setItemPriceBeforeDiscount(java.lang.Integer value) {
+  public void setItemPriceBeforeDiscount(java.nio.ByteBuffer value) {
     this.itemPriceBeforeDiscount = value;
   }
 
@@ -137,7 +137,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'discount' field.
    * @return The value of the 'discount' field.
    */
-  public java.lang.Integer getDiscount() {
+  public java.nio.ByteBuffer getDiscount() {
     return discount;
   }
 
@@ -145,7 +145,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Sets the value of the 'discount' field.
    * @param value the value to set.
    */
-  public void setDiscount(java.lang.Integer value) {
+  public void setDiscount(java.nio.ByteBuffer value) {
     this.discount = value;
   }
 
@@ -153,7 +153,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Gets the value of the 'itemPriceAfterDiscount' field.
    * @return The value of the 'itemPriceAfterDiscount' field.
    */
-  public java.lang.Integer getItemPriceAfterDiscount() {
+  public java.nio.ByteBuffer getItemPriceAfterDiscount() {
     return itemPriceAfterDiscount;
   }
 
@@ -161,7 +161,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
    * Sets the value of the 'itemPriceAfterDiscount' field.
    * @param value the value to set.
    */
-  public void setItemPriceAfterDiscount(java.lang.Integer value) {
+  public void setItemPriceAfterDiscount(java.nio.ByteBuffer value) {
     this.itemPriceAfterDiscount = value;
   }
 
@@ -198,9 +198,9 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
     implements org.apache.avro.data.RecordBuilder<LineItemPrice> {
 
     private java.lang.CharSequence currencyCode;
-    private int itemPriceBeforeDiscount;
-    private int discount;
-    private int itemPriceAfterDiscount;
+    private java.nio.ByteBuffer itemPriceBeforeDiscount;
+    private java.nio.ByteBuffer discount;
+    private java.nio.ByteBuffer itemPriceAfterDiscount;
 
     /** Creates a new Builder */
     private Builder() {
@@ -298,7 +298,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'itemPriceBeforeDiscount' field.
       * @return The value.
       */
-    public java.lang.Integer getItemPriceBeforeDiscount() {
+    public java.nio.ByteBuffer getItemPriceBeforeDiscount() {
       return itemPriceBeforeDiscount;
     }
 
@@ -307,7 +307,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'itemPriceBeforeDiscount'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setItemPriceBeforeDiscount(int value) {
+    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setItemPriceBeforeDiscount(java.nio.ByteBuffer value) {
       validate(fields()[1], value);
       this.itemPriceBeforeDiscount = value;
       fieldSetFlags()[1] = true;
@@ -328,6 +328,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder clearItemPriceBeforeDiscount() {
+      itemPriceBeforeDiscount = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -336,7 +337,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'discount' field.
       * @return The value.
       */
-    public java.lang.Integer getDiscount() {
+    public java.nio.ByteBuffer getDiscount() {
       return discount;
     }
 
@@ -345,7 +346,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'discount'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setDiscount(int value) {
+    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setDiscount(java.nio.ByteBuffer value) {
       validate(fields()[2], value);
       this.discount = value;
       fieldSetFlags()[2] = true;
@@ -366,6 +367,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder clearDiscount() {
+      discount = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -374,7 +376,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * Gets the value of the 'itemPriceAfterDiscount' field.
       * @return The value.
       */
-    public java.lang.Integer getItemPriceAfterDiscount() {
+    public java.nio.ByteBuffer getItemPriceAfterDiscount() {
       return itemPriceAfterDiscount;
     }
 
@@ -383,7 +385,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @param value The value of 'itemPriceAfterDiscount'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setItemPriceAfterDiscount(int value) {
+    public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder setItemPriceAfterDiscount(java.nio.ByteBuffer value) {
       validate(fields()[3], value);
       this.itemPriceAfterDiscount = value;
       fieldSetFlags()[3] = true;
@@ -404,6 +406,7 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder clearItemPriceAfterDiscount() {
+      itemPriceAfterDiscount = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -414,9 +417,9 @@ public class LineItemPrice extends org.apache.avro.specific.SpecificRecordBase i
       try {
         LineItemPrice record = new LineItemPrice();
         record.currencyCode = fieldSetFlags()[0] ? this.currencyCode : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.itemPriceBeforeDiscount = fieldSetFlags()[1] ? this.itemPriceBeforeDiscount : (java.lang.Integer) defaultValue(fields()[1]);
-        record.discount = fieldSetFlags()[2] ? this.discount : (java.lang.Integer) defaultValue(fields()[2]);
-        record.itemPriceAfterDiscount = fieldSetFlags()[3] ? this.itemPriceAfterDiscount : (java.lang.Integer) defaultValue(fields()[3]);
+        record.itemPriceBeforeDiscount = fieldSetFlags()[1] ? this.itemPriceBeforeDiscount : (java.nio.ByteBuffer) defaultValue(fields()[1]);
+        record.discount = fieldSetFlags()[2] ? this.discount : (java.nio.ByteBuffer) defaultValue(fields()[2]);
+        record.itemPriceAfterDiscount = fieldSetFlags()[3] ? this.itemPriceAfterDiscount : (java.nio.ByteBuffer) defaultValue(fields()[3]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

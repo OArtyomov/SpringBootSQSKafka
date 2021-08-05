@@ -16,6 +16,7 @@ import com.hcl.hclmessaging.dto.order.Attribute;
 import com.hcl.hclmessaging.dto.order.Notification;
 import com.hcl.hclmessaging.dto.order.Order;
 import com.hcl.hclmessaging.dto.order.ShippingInfo;
+import com.hcl.hclmessaging.utils.ConversionUtils;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -23,10 +24,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static com.hcl.hclmessaging.utils.ConversionUtils.toByteBuffer;
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.toList;
 import static org.springframework.util.CollectionUtils.isEmpty;
@@ -95,30 +100,33 @@ public class NotificationOrderConverter implements Converter<Notification, Kafka
         }
         result.setTax(extractTax(order));
         //TODO: It is unclear where to get discount
-        result.setDiscount(0);
+        result.setDiscount(toByteBuffer(BigDecimal.ZERO));
         result.setSubtotal(extractSubTotal(lineItems));
         return result;
     }
 
-    private Integer extractSubTotal(List<LineItem> lineItems) {
+    private ByteBuffer extractSubTotal(List<LineItem> lineItems) {
         if (!isEmpty(lineItems)) {
-            return lineItems.stream()
+            return toByteBuffer(lineItems.stream()
                     .filter(item -> item != null && item.getSku() != null
                             && item.getSku().getLineItemPrice() != null && item.getSku().getLineItemPrice().getItemPriceBeforeDiscount() != null)
-                    .mapToInt(item -> item.getSku().getLineItemPrice().getItemPriceBeforeDiscount())
-                    .sum();
+                    .map(item -> item.getSku().getLineItemPrice().getItemPriceBeforeDiscount())
+                    .map(ConversionUtils::toBigDecimal)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add));
         }
         return null;
     }
 
-    private Integer extractTax(Order order) {
+    private ByteBuffer extractTax(Order order) {
         if (order.getTaxedPrice() != null && !isEmpty(order.getTaxedPrice().getTaxPortions())) {
-            return order.getTaxedPrice().getTaxPortions()
+            return toByteBuffer(order.getTaxedPrice().getTaxPortions()
                     .stream()
                     .map(item -> extractPrice(item.getAmount()))
-                    .filter(item -> item != null && item.getPrice() != null)
-                    .mapToInt(Price::getPrice)
-                    .sum();
+                    .filter(Objects::nonNull)
+                    .map(Price::getPrice)
+                    .filter(Objects::nonNull)
+                    .map(ConversionUtils::toBigDecimal)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add));
         }
         return null;
     }
@@ -140,7 +148,8 @@ public class NotificationOrderConverter implements Converter<Notification, Kafka
         if (source != null) {
             Price result = new Price();
             result.setCurrencyCode(source.getCurrencyCode());
-            result.setPrice(source.getCentAmount() / 100);
+            result.setPrice(toByteBuffer(BigDecimal.valueOf(source.getCentAmount())
+                    .divide(BigDecimal.valueOf(100))));
             return result;
         }
         return null;
@@ -201,10 +210,12 @@ public class NotificationOrderConverter implements Converter<Notification, Kafka
         result.setCurrencyCode(source.getTotalPrice().getCurrencyCode());
         Integer centAmount = source.getTotalPrice().getCentAmount();
         //TODO, Need understand where to get discount. It is missing in request
-        result.setItemPriceAfterDiscount(centAmount / 100);
-        result.setItemPriceBeforeDiscount(centAmount / 100);
+        result.setItemPriceAfterDiscount(toByteBuffer(BigDecimal.valueOf(centAmount)
+                .divide(BigDecimal.valueOf(100))));
+        result.setItemPriceBeforeDiscount(toByteBuffer(BigDecimal.valueOf(centAmount)
+                .divide(BigDecimal.valueOf(100))));
 
-        result.setDiscount(0);
+        result.setDiscount(toByteBuffer(BigDecimal.ZERO));
         return result;
     }
 
