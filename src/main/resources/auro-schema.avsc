@@ -1,10 +1,357 @@
 {
-    "type": "record",
-    "name": "KafkaMessageDTO",
-    "namespace": "com.hcl.hclmessaging.dto.auro",
-    "fields": [
+  "name": "KafkaOrderMessageDTO",
+  "type": "record",
+  "namespace": "com.hcl.hclmessaging.dto.auro",
+  "fields": [
     {
-        "name": "name",
-        "type": "string"
-    }]
+      "name": "data",
+      "type": {
+        "name": "Data",
+        "type": "record",
+        "fields": [
+          {
+            "name": "id",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "name": "attributes",
+            "type": {
+              "name": "Attributes",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "createdAt",
+                  "type": "int",
+                  "logicalType": "date"
+                },
+                {
+                  "name": "lastModifiedAt",
+                  "type": "int",
+                  "logicalType": "date"
+                },
+                {
+                  "name": "orderNumber",
+                  "type": "string"
+                },
+                {
+                  "name": "channel",
+                  "type": "string"
+                },
+                {
+                  "name": "totalQuantity",
+                  "type": "int"
+                },
+                {
+                  "name": "overallDeliveryType",
+                  "type": "string"
+                },
+                {
+                  "name": "lineItems",
+                  "type": {
+                    "type": "array",
+                    "items": {
+                      "name": "LineItem",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": "string"
+                        },
+                        {
+                          "name": "productId",
+                          "type": "string"
+                        },
+                        {
+                          "name": "productName",
+                          "type": "string"
+                        },
+                        {
+                          "name": "quantity",
+                          "type": "int"
+                        },
+                        {
+                          "name": "storeId",
+                          "type": "string"
+                        },
+                        {
+                          "name": "fulfillmentType",
+                          "type": "string"
+                        },
+                        {
+                          "name": "sku",
+                          "type": {
+                            "name": "Sku",
+                            "type": "record",
+                            "fields": [
+                              {
+                                "name": "id",
+                                "type": "int"
+                              },
+                              {
+                                "name": "code",
+                                "type": "string"
+                              },
+                              {
+                                "name": "attributes",
+                                "type": {
+                                  "name": "ProductAttributes",
+                                  "type": "record",
+                                  "fields": [
+                                    {
+                                      "name": "productUrl",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "colorCode",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "colorDisplayName",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "size",
+                                      "type": "string"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "lineItemPrice",
+                                "type": {
+                                  "name": "LineItemPrice",
+                                  "type": "record",
+                                  "fields": [
+                                    {
+                                      "name": "currencyCode",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "name": "itemPriceBeforeDiscount",
+                                      "type": "int"
+                                    },
+                                    {
+                                      "name": "discount",
+                                      "type": "int"
+                                    },
+                                    {
+                                      "name": "itemPriceAfterDiscount",
+                                      "type": "int"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "images",
+                                "type": {
+                                  "type": "array",
+                                  "items":{
+                                                      "name":"Image",
+                                                      "type":"record",
+                                                      "fields":[
+                                                          {"name":"url", "type":"string"}
+                                                      ]
+                                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "name": "shippingMethod",
+                  "type": {
+                    "name": "ShippingMethod",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "id",
+                        "type": "string"
+                      },
+                      {
+                        "name": "name",
+                        "type": "string"
+                      },
+                      {
+                        "name": "price",
+                        "type": {
+                          "name": "Price",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "currencyCode",
+                              "type": "string"
+                            },
+                            {
+                              "name": "price",
+                              "type": "int"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "shippingAddress",
+                  "type": {
+                    "name": "ShippingAddress",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "firstName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "lastName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "email",
+                        "type": "string"
+                      },
+                      {
+                        "name": "phoneNumber",
+                        "type": "string"
+                      },
+                      {
+                        "name": "address",
+                        "type": "string"
+                      },
+                      {
+                        "name": "city",
+                        "type": "string"
+                      },
+                      {
+                        "name": "state",
+                        "type": "string"
+                      },
+                      {
+                        "name": "deliveryNote",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "billingAddress",
+                  "type": {
+                    "name": "BillingAddress",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "firstName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "lastName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "email",
+                        "type": "string"
+                      },
+                      {
+                        "name": "phoneNumber",
+                        "type": "string"
+                      },
+                      {
+                        "name": "address",
+                        "type": "string"
+                      },
+                      {
+                        "name": "city",
+                        "type": "string"
+                      },
+                      {
+                        "name": "state",
+                        "type": "string"
+                      },
+                      {
+                        "name": "deliveryNote",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "paymentInfo",
+                  "type": {
+                    "name": "PaymentInfo",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "cardNumber",
+                        "type": "string"
+                      },
+                      {
+                        "name": "cardType",
+                        "type": "string"
+                      },
+                      {
+                        "name": "cardHolderName",
+                        "type": "string"
+                      },
+                      {
+                        "name": "cardExpiry",
+                        "type": "string"
+                      },
+                      {
+                        "name": "paymentMethod",
+                        "type": "string"
+                      },
+                      {
+                        "name": "amount",
+                        "type": "float"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "orderTotal",
+                  "type": {
+                    "name": "OrderTotal",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "currencyCode",
+                        "type": "string"
+                      },
+                      {
+                        "name": "subtotal",
+                        "type": "int"
+                      },
+                      {
+                        "name": "tax",
+                        "type": "int"
+                      },
+                      {
+                        "name": "shipping",
+                        "type": "int"
+                      },
+                      {
+                        "name": "discount",
+                        "type": "int"
+                      },
+                      {
+                        "name": "total",
+                        "type": "int"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
