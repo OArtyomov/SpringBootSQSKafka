@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -1580294226294782415L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentInfo\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"cardNumber\",\"type\":\"string\"},{\"name\":\"cardType\",\"type\":\"string\"},{\"name\":\"cardHolderName\",\"type\":\"string\"},{\"name\":\"cardExpiry\",\"type\":\"string\"},{\"name\":\"paymentMethod\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"float\"}]}");
+  private static final long serialVersionUID = 1903155919639856506L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentInfo\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"cardNumber\",\"type\":[\"string\",\"null\"]},{\"name\":\"cardType\",\"type\":[\"string\",\"null\"]},{\"name\":\"cardHolderName\",\"type\":[\"string\",\"null\"]},{\"name\":\"cardExpiry\",\"type\":[\"string\",\"null\"]},{\"name\":\"paymentMethod\",\"type\":[\"string\",\"null\"]},{\"name\":\"amount\",\"type\":[\"bytes\",\"null\"],\"logicalType\":\"decimal\",\"java-class\":\"java.math.BigDecimal\",\"precision\":4,\"scale\":2}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -56,7 +56,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public java.lang.CharSequence cardHolderName;
   @Deprecated public java.lang.CharSequence cardExpiry;
   @Deprecated public java.lang.CharSequence paymentMethod;
-  @Deprecated public float amount;
+  @Deprecated public java.nio.ByteBuffer amount;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -74,7 +74,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
    * @param paymentMethod The new value for paymentMethod
    * @param amount The new value for amount
    */
-  public PaymentInfo(java.lang.CharSequence cardNumber, java.lang.CharSequence cardType, java.lang.CharSequence cardHolderName, java.lang.CharSequence cardExpiry, java.lang.CharSequence paymentMethod, java.lang.Float amount) {
+  public PaymentInfo(java.lang.CharSequence cardNumber, java.lang.CharSequence cardType, java.lang.CharSequence cardHolderName, java.lang.CharSequence cardExpiry, java.lang.CharSequence paymentMethod, java.nio.ByteBuffer amount) {
     this.cardNumber = cardNumber;
     this.cardType = cardType;
     this.cardHolderName = cardHolderName;
@@ -106,7 +106,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
     case 2: cardHolderName = (java.lang.CharSequence)value$; break;
     case 3: cardExpiry = (java.lang.CharSequence)value$; break;
     case 4: paymentMethod = (java.lang.CharSequence)value$; break;
-    case 5: amount = (java.lang.Float)value$; break;
+    case 5: amount = (java.nio.ByteBuffer)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -195,7 +195,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
    * Gets the value of the 'amount' field.
    * @return The value of the 'amount' field.
    */
-  public java.lang.Float getAmount() {
+  public java.nio.ByteBuffer getAmount() {
     return amount;
   }
 
@@ -203,7 +203,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'amount' field.
    * @param value the value to set.
    */
-  public void setAmount(java.lang.Float value) {
+  public void setAmount(java.nio.ByteBuffer value) {
     this.amount = value;
   }
 
@@ -244,7 +244,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.CharSequence cardHolderName;
     private java.lang.CharSequence cardExpiry;
     private java.lang.CharSequence paymentMethod;
-    private float amount;
+    private java.nio.ByteBuffer amount;
 
     /** Creates a new Builder */
     private Builder() {
@@ -514,7 +514,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
       * Gets the value of the 'amount' field.
       * @return The value.
       */
-    public java.lang.Float getAmount() {
+    public java.nio.ByteBuffer getAmount() {
       return amount;
     }
 
@@ -523,7 +523,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
       * @param value The value of 'amount'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.PaymentInfo.Builder setAmount(float value) {
+    public com.hcl.hclmessaging.dto.auro.PaymentInfo.Builder setAmount(java.nio.ByteBuffer value) {
       validate(fields()[5], value);
       this.amount = value;
       fieldSetFlags()[5] = true;
@@ -544,6 +544,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.PaymentInfo.Builder clearAmount() {
+      amount = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -558,7 +559,7 @@ public class PaymentInfo extends org.apache.avro.specific.SpecificRecordBase imp
         record.cardHolderName = fieldSetFlags()[2] ? this.cardHolderName : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.cardExpiry = fieldSetFlags()[3] ? this.cardExpiry : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.paymentMethod = fieldSetFlags()[4] ? this.paymentMethod : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.amount = fieldSetFlags()[5] ? this.amount : (java.lang.Float) defaultValue(fields()[5]);
+        record.amount = fieldSetFlags()[5] ? this.amount : (java.nio.ByteBuffer) defaultValue(fields()[5]);
         return record;
       } catch (java.lang.Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

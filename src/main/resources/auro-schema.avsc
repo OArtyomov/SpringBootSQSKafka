@@ -73,7 +73,7 @@
                         },
                         {
                           "name": "storeId",
-                          "type": "string"
+                          "type": ["string", "null"]
                         },
                         {
                           "name": "fulfillmentType",
@@ -246,27 +246,31 @@
                     "fields": [
                       {
                         "name": "cardNumber",
-                        "type": "string"
+                        "type": ["string", "null"]
                       },
                       {
                         "name": "cardType",
-                        "type": "string"
+                        "type":  ["string", "null"]
                       },
                       {
                         "name": "cardHolderName",
-                        "type": "string"
+                        "type":  ["string", "null"]
                       },
                       {
                         "name": "cardExpiry",
-                        "type": "string"
+                        "type": ["string", "null"]
                       },
                       {
                         "name": "paymentMethod",
-                        "type": "string"
+                        "type":  ["string", "null"]
                       },
                       {
                         "name": "amount",
-                        "type": "float"
+                        "type": ["bytes", "null"],
+                                                  "logicalType": "decimal",
+                                                  "java-class": "java.math.BigDecimal",
+                                                  "precision": 4,
+                                                  "scale": 2
                       }
                     ]
                   }

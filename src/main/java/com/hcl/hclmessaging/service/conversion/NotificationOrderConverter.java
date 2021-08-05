@@ -58,21 +58,24 @@ public class NotificationOrderConverter implements Converter<Notification, Kafka
     }
 
     private Attributes buildAttributes(Order order) {
-        Attributes result = new Attributes();
-        result.setCreatedAt(order.getCreatedAt());
-        result.setLastModifiedAt(order.getLastModifiedAt());
-        result.setOrderNumber(order.getOrderNumber());
-        result.setChannel(order.getCustom().getFields().getChannel());
-        List<LineItem> lineItems = convertLineItems(order.getLineItems());
-        result.setLineItems(lineItems);
-        result.setTotalQuantity(extractTotalQuantity(lineItems));
-        result.setOverallDeliveryType("mixed");
-        result.setShippingAddress(convertAddress(order.getShippingAddress()));
-        result.setBillingAddress(convertAddress(order.getBillingAddress()));
-        result.setShippingMethod(extractShippingMethod(order));
-        result.setPaymentInfo(extractPaymentInfo(order));
-        result.setOrderTotal(extractOrderTotal(order, lineItems));
-        return result;
+        if (order != null) {
+            Attributes result = new Attributes();
+            result.setCreatedAt(order.getCreatedAt());
+            result.setLastModifiedAt(order.getLastModifiedAt());
+            result.setOrderNumber(order.getOrderNumber());
+            result.setChannel(order.getCustom().getFields().getChannel());
+            List<LineItem> lineItems = convertLineItems(order.getLineItems());
+            result.setLineItems(lineItems);
+            result.setTotalQuantity(extractTotalQuantity(lineItems));
+            result.setOverallDeliveryType("mixed");
+            result.setShippingAddress(convertAddress(order.getShippingAddress()));
+            result.setBillingAddress(convertAddress(order.getBillingAddress()));
+            result.setShippingMethod(extractShippingMethod(order));
+            result.setPaymentInfo(extractPaymentInfo(order));
+            result.setOrderTotal(extractOrderTotal(order, lineItems));
+            return result;
+        }
+        return null;
     }
 
     private Integer extractTotalQuantity(List<LineItem> lineItems) {
@@ -132,7 +135,7 @@ public class NotificationOrderConverter implements Converter<Notification, Kafka
     }
 
     private PaymentInfo extractPaymentInfo(Order order) {
-        return null;
+        return new PaymentInfo();
     }
 
     private ShippingMethod extractShippingMethod(Order order) {
