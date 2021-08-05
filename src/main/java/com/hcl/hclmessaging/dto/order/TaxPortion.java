@@ -22,7 +22,7 @@ public class TaxPortion {
     @JsonProperty("rate")
     private Integer rate;
     @JsonProperty("amount")
-    private Amount amount;
+    private Price amount;
     @JsonProperty("name")
     private String name;
     @JsonIgnore
@@ -39,12 +39,12 @@ public class TaxPortion {
     }
 
     @JsonProperty("amount")
-    public Amount getAmount() {
+    public Price getAmount() {
         return amount;
     }
 
     @JsonProperty("amount")
-    public void setAmount(Amount amount) {
+    public void setAmount(Price amount) {
         this.amount = amount;
     }
 

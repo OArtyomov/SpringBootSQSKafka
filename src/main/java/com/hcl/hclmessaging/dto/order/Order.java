@@ -68,7 +68,7 @@ public class Order {
     @JsonProperty("orderNumber")
     private String orderNumber;
     @JsonProperty("totalPrice")
-    private TotalPrice totalPrice;
+    private Price totalPrice;
     @JsonProperty("taxedPrice")
     private TaxedPrice taxedPrice;
     @JsonProperty("country")
@@ -106,9 +106,9 @@ public class Order {
     @JsonProperty("paymentInfo")
     private PaymentInfo paymentInfo;
     @JsonProperty("shippingAddress")
-    private ShippingAddress shippingAddress;
+    private Address shippingAddress;
     @JsonProperty("billingAddress")
-    private BillingAddress billingAddress;
+    private Address billingAddress;
     @JsonProperty("itemShippingAddresses")
     private List<Object> itemShippingAddresses = null;
     @JsonProperty("refusedGifts")
@@ -207,12 +207,12 @@ public class Order {
     }
 
     @JsonProperty("totalPrice")
-    public TotalPrice getTotalPrice() {
+    public Price getTotalPrice() {
         return totalPrice;
     }
 
     @JsonProperty("totalPrice")
-    public void setTotalPrice(TotalPrice totalPrice) {
+    public void setTotalPrice(Price totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -397,22 +397,22 @@ public class Order {
     }
 
     @JsonProperty("shippingAddress")
-    public ShippingAddress getShippingAddress() {
+    public Address getShippingAddress() {
         return shippingAddress;
     }
 
     @JsonProperty("shippingAddress")
-    public void setShippingAddress(ShippingAddress shippingAddress) {
+    public void setShippingAddress(Address shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
 
     @JsonProperty("billingAddress")
-    public BillingAddress getBillingAddress() {
+    public Address getBillingAddress() {
         return billingAddress;
     }
 
     @JsonProperty("billingAddress")
-    public void setBillingAddress(BillingAddress billingAddress) {
+    public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
     }
 

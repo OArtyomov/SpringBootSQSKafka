@@ -23,7 +23,7 @@ public class TaxedPrice {
     @JsonProperty("totalNet")
     private TotalNet totalNet;
     @JsonProperty("totalGross")
-    private TotalGross totalGross;
+    private Price totalGross;
     @JsonProperty("taxPortions")
     private List<TaxPortion> taxPortions = null;
     @JsonIgnore
@@ -40,12 +40,12 @@ public class TaxedPrice {
     }
 
     @JsonProperty("totalGross")
-    public TotalGross getTotalGross() {
+    public Price getTotalGross() {
         return totalGross;
     }
 
     @JsonProperty("totalGross")
-    public void setTotalGross(TotalGross totalGross) {
+    public void setTotalGross(Price totalGross) {
         this.totalGross = totalGross;
     }
 

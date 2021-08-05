@@ -25,13 +25,11 @@
               "fields": [
                 {
                   "name": "createdAt",
-                  "type": "int",
-                  "logicalType": "date"
+                  "type": "string"
                 },
                 {
                   "name": "lastModifiedAt",
-                  "type": "int",
-                  "logicalType": "date"
+                  "type": "string"
                 },
                 {
                   "name": "orderNumber",
@@ -97,29 +95,9 @@
                               },
                               {
                                 "name": "attributes",
-                                "type": {
-                                  "name": "ProductAttributes",
-                                  "type": "record",
-                                  "fields": [
-                                    {
-                                      "name": "productUrl",
-                                      "type": "string"
-                                    },
-                                    {
-                                      "name": "colorCode",
-                                      "type": "string"
-                                    },
-                                    {
-                                      "name": "colorDisplayName",
-                                      "type": "string"
-                                    },
-                                    {
-                                      "name": "size",
-                                      "type": "string"
-                                    }
-                                  ]
+                                "type": {"type": "map", "values": "string"}
                                 }
-                              },
+                              ,
                               {
                                 "name": "lineItemPrice",
                                 "type": {
@@ -202,7 +180,7 @@
                 {
                   "name": "shippingAddress",
                   "type": {
-                    "name": "ShippingAddress",
+                    "name": "Address",
                     "type": "record",
                     "fields": [
                       {
@@ -242,44 +220,7 @@
                 },
                 {
                   "name": "billingAddress",
-                  "type": {
-                    "name": "BillingAddress",
-                    "type": "record",
-                    "fields": [
-                      {
-                        "name": "firstName",
-                        "type": "string"
-                      },
-                      {
-                        "name": "lastName",
-                        "type": "string"
-                      },
-                      {
-                        "name": "email",
-                        "type": "string"
-                      },
-                      {
-                        "name": "phoneNumber",
-                        "type": "string"
-                      },
-                      {
-                        "name": "address",
-                        "type": "string"
-                      },
-                      {
-                        "name": "city",
-                        "type": "string"
-                      },
-                      {
-                        "name": "state",
-                        "type": "string"
-                      },
-                      {
-                        "name": "deliveryNote",
-                        "type": "string"
-                      }
-                    ]
-                  }
+                  "type": "Address"
                 },
                 {
                   "name": "paymentInfo",

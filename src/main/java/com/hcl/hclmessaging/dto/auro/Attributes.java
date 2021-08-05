@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Attributes extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8692812101167871231L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Attributes\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"createdAt\",\"type\":\"int\",\"logicalType\":\"date\"},{\"name\":\"lastModifiedAt\",\"type\":\"int\",\"logicalType\":\"date\"},{\"name\":\"orderNumber\",\"type\":\"string\"},{\"name\":\"channel\",\"type\":\"string\"},{\"name\":\"totalQuantity\",\"type\":\"int\"},{\"name\":\"overallDeliveryType\",\"type\":\"string\"},{\"name\":\"lineItems\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"LineItem\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"productId\",\"type\":\"string\"},{\"name\":\"productName\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"storeId\",\"type\":\"string\"},{\"name\":\"fulfillmentType\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":{\"type\":\"record\",\"name\":\"Sku\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"attributes\",\"type\":{\"type\":\"record\",\"name\":\"ProductAttributes\",\"fields\":[{\"name\":\"productUrl\",\"type\":\"string\"},{\"name\":\"colorCode\",\"type\":\"string\"},{\"name\":\"colorDisplayName\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"}]}},{\"name\":\"lineItemPrice\",\"type\":{\"type\":\"record\",\"name\":\"LineItemPrice\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"int\"}]}},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Image\",\"fields\":[{\"name\":\"url\",\"type\":\"string\"}]}}}]}}]}}},{\"name\":\"shippingMethod\",\"type\":{\"type\":\"record\",\"name\":\"ShippingMethod\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"price\",\"type\":{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"int\"}]}}]}},{\"name\":\"shippingAddress\",\"type\":{\"type\":\"record\",\"name\":\"ShippingAddress\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"phoneNumber\",\"type\":\"string\"},{\"name\":\"address\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"deliveryNote\",\"type\":\"string\"}]}},{\"name\":\"billingAddress\",\"type\":{\"type\":\"record\",\"name\":\"BillingAddress\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"phoneNumber\",\"type\":\"string\"},{\"name\":\"address\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"deliveryNote\",\"type\":\"string\"}]}},{\"name\":\"paymentInfo\",\"type\":{\"type\":\"record\",\"name\":\"PaymentInfo\",\"fields\":[{\"name\":\"cardNumber\",\"type\":\"string\"},{\"name\":\"cardType\",\"type\":\"string\"},{\"name\":\"cardHolderName\",\"type\":\"string\"},{\"name\":\"cardExpiry\",\"type\":\"string\"},{\"name\":\"paymentMethod\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"float\"}]}},{\"name\":\"orderTotal\",\"type\":{\"type\":\"record\",\"name\":\"OrderTotal\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"subtotal\",\"type\":\"int\"},{\"name\":\"tax\",\"type\":\"int\"},{\"name\":\"shipping\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"total\",\"type\":\"int\"}]}}]}");
+  private static final long serialVersionUID = -8068388733064432866L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Attributes\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"createdAt\",\"type\":\"string\"},{\"name\":\"lastModifiedAt\",\"type\":\"string\"},{\"name\":\"orderNumber\",\"type\":\"string\"},{\"name\":\"channel\",\"type\":\"string\"},{\"name\":\"totalQuantity\",\"type\":\"int\"},{\"name\":\"overallDeliveryType\",\"type\":\"string\"},{\"name\":\"lineItems\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"LineItem\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"productId\",\"type\":\"string\"},{\"name\":\"productName\",\"type\":\"string\"},{\"name\":\"quantity\",\"type\":\"int\"},{\"name\":\"storeId\",\"type\":\"string\"},{\"name\":\"fulfillmentType\",\"type\":\"string\"},{\"name\":\"sku\",\"type\":{\"type\":\"record\",\"name\":\"Sku\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"attributes\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"lineItemPrice\",\"type\":{\"type\":\"record\",\"name\":\"LineItemPrice\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"int\"}]}},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Image\",\"fields\":[{\"name\":\"url\",\"type\":\"string\"}]}}}]}}]}}},{\"name\":\"shippingMethod\",\"type\":{\"type\":\"record\",\"name\":\"ShippingMethod\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"price\",\"type\":{\"type\":\"record\",\"name\":\"Price\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"price\",\"type\":\"int\"}]}}]}},{\"name\":\"shippingAddress\",\"type\":{\"type\":\"record\",\"name\":\"Address\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"phoneNumber\",\"type\":\"string\"},{\"name\":\"address\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"deliveryNote\",\"type\":\"string\"}]}},{\"name\":\"billingAddress\",\"type\":\"Address\"},{\"name\":\"paymentInfo\",\"type\":{\"type\":\"record\",\"name\":\"PaymentInfo\",\"fields\":[{\"name\":\"cardNumber\",\"type\":\"string\"},{\"name\":\"cardType\",\"type\":\"string\"},{\"name\":\"cardHolderName\",\"type\":\"string\"},{\"name\":\"cardExpiry\",\"type\":\"string\"},{\"name\":\"paymentMethod\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"float\"}]}},{\"name\":\"orderTotal\",\"type\":{\"type\":\"record\",\"name\":\"OrderTotal\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"subtotal\",\"type\":\"int\"},{\"name\":\"tax\",\"type\":\"int\"},{\"name\":\"shipping\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"total\",\"type\":\"int\"}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -51,16 +51,16 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
     return DECODER.decode(b);
   }
 
-  @Deprecated public int createdAt;
-  @Deprecated public int lastModifiedAt;
+  @Deprecated public java.lang.CharSequence createdAt;
+  @Deprecated public java.lang.CharSequence lastModifiedAt;
   @Deprecated public java.lang.CharSequence orderNumber;
   @Deprecated public java.lang.CharSequence channel;
   @Deprecated public int totalQuantity;
   @Deprecated public java.lang.CharSequence overallDeliveryType;
   @Deprecated public java.util.List<com.hcl.hclmessaging.dto.auro.LineItem> lineItems;
   @Deprecated public com.hcl.hclmessaging.dto.auro.ShippingMethod shippingMethod;
-  @Deprecated public com.hcl.hclmessaging.dto.auro.ShippingAddress shippingAddress;
-  @Deprecated public com.hcl.hclmessaging.dto.auro.BillingAddress billingAddress;
+  @Deprecated public com.hcl.hclmessaging.dto.auro.Address shippingAddress;
+  @Deprecated public com.hcl.hclmessaging.dto.auro.Address billingAddress;
   @Deprecated public com.hcl.hclmessaging.dto.auro.PaymentInfo paymentInfo;
   @Deprecated public com.hcl.hclmessaging.dto.auro.OrderTotal orderTotal;
 
@@ -86,7 +86,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * @param paymentInfo The new value for paymentInfo
    * @param orderTotal The new value for orderTotal
    */
-  public Attributes(java.lang.Integer createdAt, java.lang.Integer lastModifiedAt, java.lang.CharSequence orderNumber, java.lang.CharSequence channel, java.lang.Integer totalQuantity, java.lang.CharSequence overallDeliveryType, java.util.List<com.hcl.hclmessaging.dto.auro.LineItem> lineItems, com.hcl.hclmessaging.dto.auro.ShippingMethod shippingMethod, com.hcl.hclmessaging.dto.auro.ShippingAddress shippingAddress, com.hcl.hclmessaging.dto.auro.BillingAddress billingAddress, com.hcl.hclmessaging.dto.auro.PaymentInfo paymentInfo, com.hcl.hclmessaging.dto.auro.OrderTotal orderTotal) {
+  public Attributes(java.lang.CharSequence createdAt, java.lang.CharSequence lastModifiedAt, java.lang.CharSequence orderNumber, java.lang.CharSequence channel, java.lang.Integer totalQuantity, java.lang.CharSequence overallDeliveryType, java.util.List<com.hcl.hclmessaging.dto.auro.LineItem> lineItems, com.hcl.hclmessaging.dto.auro.ShippingMethod shippingMethod, com.hcl.hclmessaging.dto.auro.Address shippingAddress, com.hcl.hclmessaging.dto.auro.Address billingAddress, com.hcl.hclmessaging.dto.auro.PaymentInfo paymentInfo, com.hcl.hclmessaging.dto.auro.OrderTotal orderTotal) {
     this.createdAt = createdAt;
     this.lastModifiedAt = lastModifiedAt;
     this.orderNumber = orderNumber;
@@ -125,16 +125,16 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: createdAt = (java.lang.Integer)value$; break;
-    case 1: lastModifiedAt = (java.lang.Integer)value$; break;
+    case 0: createdAt = (java.lang.CharSequence)value$; break;
+    case 1: lastModifiedAt = (java.lang.CharSequence)value$; break;
     case 2: orderNumber = (java.lang.CharSequence)value$; break;
     case 3: channel = (java.lang.CharSequence)value$; break;
     case 4: totalQuantity = (java.lang.Integer)value$; break;
     case 5: overallDeliveryType = (java.lang.CharSequence)value$; break;
     case 6: lineItems = (java.util.List<com.hcl.hclmessaging.dto.auro.LineItem>)value$; break;
     case 7: shippingMethod = (com.hcl.hclmessaging.dto.auro.ShippingMethod)value$; break;
-    case 8: shippingAddress = (com.hcl.hclmessaging.dto.auro.ShippingAddress)value$; break;
-    case 9: billingAddress = (com.hcl.hclmessaging.dto.auro.BillingAddress)value$; break;
+    case 8: shippingAddress = (com.hcl.hclmessaging.dto.auro.Address)value$; break;
+    case 9: billingAddress = (com.hcl.hclmessaging.dto.auro.Address)value$; break;
     case 10: paymentInfo = (com.hcl.hclmessaging.dto.auro.PaymentInfo)value$; break;
     case 11: orderTotal = (com.hcl.hclmessaging.dto.auro.OrderTotal)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -145,7 +145,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'createdAt' field.
    * @return The value of the 'createdAt' field.
    */
-  public java.lang.Integer getCreatedAt() {
+  public java.lang.CharSequence getCreatedAt() {
     return createdAt;
   }
 
@@ -153,7 +153,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'createdAt' field.
    * @param value the value to set.
    */
-  public void setCreatedAt(java.lang.Integer value) {
+  public void setCreatedAt(java.lang.CharSequence value) {
     this.createdAt = value;
   }
 
@@ -161,7 +161,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'lastModifiedAt' field.
    * @return The value of the 'lastModifiedAt' field.
    */
-  public java.lang.Integer getLastModifiedAt() {
+  public java.lang.CharSequence getLastModifiedAt() {
     return lastModifiedAt;
   }
 
@@ -169,7 +169,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'lastModifiedAt' field.
    * @param value the value to set.
    */
-  public void setLastModifiedAt(java.lang.Integer value) {
+  public void setLastModifiedAt(java.lang.CharSequence value) {
     this.lastModifiedAt = value;
   }
 
@@ -273,7 +273,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'shippingAddress' field.
    * @return The value of the 'shippingAddress' field.
    */
-  public com.hcl.hclmessaging.dto.auro.ShippingAddress getShippingAddress() {
+  public com.hcl.hclmessaging.dto.auro.Address getShippingAddress() {
     return shippingAddress;
   }
 
@@ -281,7 +281,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'shippingAddress' field.
    * @param value the value to set.
    */
-  public void setShippingAddress(com.hcl.hclmessaging.dto.auro.ShippingAddress value) {
+  public void setShippingAddress(com.hcl.hclmessaging.dto.auro.Address value) {
     this.shippingAddress = value;
   }
 
@@ -289,7 +289,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Gets the value of the 'billingAddress' field.
    * @return The value of the 'billingAddress' field.
    */
-  public com.hcl.hclmessaging.dto.auro.BillingAddress getBillingAddress() {
+  public com.hcl.hclmessaging.dto.auro.Address getBillingAddress() {
     return billingAddress;
   }
 
@@ -297,7 +297,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
    * Sets the value of the 'billingAddress' field.
    * @param value the value to set.
    */
-  public void setBillingAddress(com.hcl.hclmessaging.dto.auro.BillingAddress value) {
+  public void setBillingAddress(com.hcl.hclmessaging.dto.auro.Address value) {
     this.billingAddress = value;
   }
 
@@ -365,8 +365,8 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Attributes>
     implements org.apache.avro.data.RecordBuilder<Attributes> {
 
-    private int createdAt;
-    private int lastModifiedAt;
+    private java.lang.CharSequence createdAt;
+    private java.lang.CharSequence lastModifiedAt;
     private java.lang.CharSequence orderNumber;
     private java.lang.CharSequence channel;
     private int totalQuantity;
@@ -374,10 +374,10 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
     private java.util.List<com.hcl.hclmessaging.dto.auro.LineItem> lineItems;
     private com.hcl.hclmessaging.dto.auro.ShippingMethod shippingMethod;
     private com.hcl.hclmessaging.dto.auro.ShippingMethod.Builder shippingMethodBuilder;
-    private com.hcl.hclmessaging.dto.auro.ShippingAddress shippingAddress;
-    private com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder shippingAddressBuilder;
-    private com.hcl.hclmessaging.dto.auro.BillingAddress billingAddress;
-    private com.hcl.hclmessaging.dto.auro.BillingAddress.Builder billingAddressBuilder;
+    private com.hcl.hclmessaging.dto.auro.Address shippingAddress;
+    private com.hcl.hclmessaging.dto.auro.Address.Builder shippingAddressBuilder;
+    private com.hcl.hclmessaging.dto.auro.Address billingAddress;
+    private com.hcl.hclmessaging.dto.auro.Address.Builder billingAddressBuilder;
     private com.hcl.hclmessaging.dto.auro.PaymentInfo paymentInfo;
     private com.hcl.hclmessaging.dto.auro.PaymentInfo.Builder paymentInfoBuilder;
     private com.hcl.hclmessaging.dto.auro.OrderTotal orderTotal;
@@ -434,14 +434,14 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
         fieldSetFlags()[8] = true;
       }
       if (other.hasShippingAddressBuilder()) {
-        this.shippingAddressBuilder = com.hcl.hclmessaging.dto.auro.ShippingAddress.newBuilder(other.getShippingAddressBuilder());
+        this.shippingAddressBuilder = com.hcl.hclmessaging.dto.auro.Address.newBuilder(other.getShippingAddressBuilder());
       }
       if (isValidValue(fields()[9], other.billingAddress)) {
         this.billingAddress = data().deepCopy(fields()[9].schema(), other.billingAddress);
         fieldSetFlags()[9] = true;
       }
       if (other.hasBillingAddressBuilder()) {
-        this.billingAddressBuilder = com.hcl.hclmessaging.dto.auro.BillingAddress.newBuilder(other.getBillingAddressBuilder());
+        this.billingAddressBuilder = com.hcl.hclmessaging.dto.auro.Address.newBuilder(other.getBillingAddressBuilder());
       }
       if (isValidValue(fields()[10], other.paymentInfo)) {
         this.paymentInfo = data().deepCopy(fields()[10].schema(), other.paymentInfo);
@@ -524,7 +524,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'createdAt' field.
       * @return The value.
       */
-    public java.lang.Integer getCreatedAt() {
+    public java.lang.CharSequence getCreatedAt() {
       return createdAt;
     }
 
@@ -533,7 +533,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'createdAt'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setCreatedAt(int value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setCreatedAt(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.createdAt = value;
       fieldSetFlags()[0] = true;
@@ -554,6 +554,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.Attributes.Builder clearCreatedAt() {
+      createdAt = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -562,7 +563,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'lastModifiedAt' field.
       * @return The value.
       */
-    public java.lang.Integer getLastModifiedAt() {
+    public java.lang.CharSequence getLastModifiedAt() {
       return lastModifiedAt;
     }
 
@@ -571,7 +572,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'lastModifiedAt'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setLastModifiedAt(int value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setLastModifiedAt(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.lastModifiedAt = value;
       fieldSetFlags()[1] = true;
@@ -592,6 +593,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @return This builder.
       */
     public com.hcl.hclmessaging.dto.auro.Attributes.Builder clearLastModifiedAt() {
+      lastModifiedAt = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -868,7 +870,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'shippingAddress' field.
       * @return The value.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress getShippingAddress() {
+    public com.hcl.hclmessaging.dto.auro.Address getShippingAddress() {
       return shippingAddress;
     }
 
@@ -877,7 +879,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'shippingAddress'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setShippingAddress(com.hcl.hclmessaging.dto.auro.ShippingAddress value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setShippingAddress(com.hcl.hclmessaging.dto.auro.Address value) {
       validate(fields()[8], value);
       this.shippingAddressBuilder = null;
       this.shippingAddress = value;
@@ -897,12 +899,12 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'shippingAddress' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder getShippingAddressBuilder() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder getShippingAddressBuilder() {
       if (shippingAddressBuilder == null) {
         if (hasShippingAddress()) {
-          setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.ShippingAddress.newBuilder(shippingAddress));
+          setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.newBuilder(shippingAddress));
         } else {
-          setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.ShippingAddress.newBuilder());
+          setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.newBuilder());
         }
       }
       return shippingAddressBuilder;
@@ -913,7 +915,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setShippingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.Builder value) {
       clearShippingAddress();
       shippingAddressBuilder = value;
       return this;
@@ -942,7 +944,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * Gets the value of the 'billingAddress' field.
       * @return The value.
       */
-    public com.hcl.hclmessaging.dto.auro.BillingAddress getBillingAddress() {
+    public com.hcl.hclmessaging.dto.auro.Address getBillingAddress() {
       return billingAddress;
     }
 
@@ -951,7 +953,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
       * @param value The value of 'billingAddress'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setBillingAddress(com.hcl.hclmessaging.dto.auro.BillingAddress value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setBillingAddress(com.hcl.hclmessaging.dto.auro.Address value) {
       validate(fields()[9], value);
       this.billingAddressBuilder = null;
       this.billingAddress = value;
@@ -971,12 +973,12 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
      * Gets the Builder instance for the 'billingAddress' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public com.hcl.hclmessaging.dto.auro.BillingAddress.Builder getBillingAddressBuilder() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder getBillingAddressBuilder() {
       if (billingAddressBuilder == null) {
         if (hasBillingAddress()) {
-          setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.BillingAddress.newBuilder(billingAddress));
+          setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.newBuilder(billingAddress));
         } else {
-          setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.BillingAddress.newBuilder());
+          setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.newBuilder());
         }
       }
       return billingAddressBuilder;
@@ -987,7 +989,7 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.BillingAddress.Builder value) {
+    public com.hcl.hclmessaging.dto.auro.Attributes.Builder setBillingAddressBuilder(com.hcl.hclmessaging.dto.auro.Address.Builder value) {
       clearBillingAddress();
       billingAddressBuilder = value;
       return this;
@@ -1165,8 +1167,8 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
     public Attributes build() {
       try {
         Attributes record = new Attributes();
-        record.createdAt = fieldSetFlags()[0] ? this.createdAt : (java.lang.Integer) defaultValue(fields()[0]);
-        record.lastModifiedAt = fieldSetFlags()[1] ? this.lastModifiedAt : (java.lang.Integer) defaultValue(fields()[1]);
+        record.createdAt = fieldSetFlags()[0] ? this.createdAt : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.lastModifiedAt = fieldSetFlags()[1] ? this.lastModifiedAt : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.orderNumber = fieldSetFlags()[2] ? this.orderNumber : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.channel = fieldSetFlags()[3] ? this.channel : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.totalQuantity = fieldSetFlags()[4] ? this.totalQuantity : (java.lang.Integer) defaultValue(fields()[4]);
@@ -1180,12 +1182,12 @@ public class Attributes extends org.apache.avro.specific.SpecificRecordBase impl
         if (shippingAddressBuilder != null) {
           record.shippingAddress = this.shippingAddressBuilder.build();
         } else {
-          record.shippingAddress = fieldSetFlags()[8] ? this.shippingAddress : (com.hcl.hclmessaging.dto.auro.ShippingAddress) defaultValue(fields()[8]);
+          record.shippingAddress = fieldSetFlags()[8] ? this.shippingAddress : (com.hcl.hclmessaging.dto.auro.Address) defaultValue(fields()[8]);
         }
         if (billingAddressBuilder != null) {
           record.billingAddress = this.billingAddressBuilder.build();
         } else {
-          record.billingAddress = fieldSetFlags()[9] ? this.billingAddress : (com.hcl.hclmessaging.dto.auro.BillingAddress) defaultValue(fields()[9]);
+          record.billingAddress = fieldSetFlags()[9] ? this.billingAddress : (com.hcl.hclmessaging.dto.auro.Address) defaultValue(fields()[9]);
         }
         if (paymentInfoBuilder != null) {
           record.paymentInfo = this.paymentInfoBuilder.build();

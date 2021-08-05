@@ -23,7 +23,7 @@ import java.util.Map;
     "email",
     "additionalAddressInfo"
 })
-public class BillingAddress {
+public class Address {
 
     @JsonProperty("firstName")
     private String firstName;
@@ -167,10 +167,10 @@ public class BillingAddress {
         if (other == this) {
             return true;
         }
-        if ((other instanceof BillingAddress) == false) {
+        if ((other instanceof Address) == false) {
             return false;
         }
-        BillingAddress rhs = ((BillingAddress) other);
+        Address rhs = ((Address) other);
         return (((((((((((this.firstName == rhs.firstName)||((this.firstName!= null)&&this.firstName.equals(rhs.firstName)))&&((this.lastName == rhs.lastName)||((this.lastName!= null)&&this.lastName.equals(rhs.lastName))))&&((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country))))&&((this.streetName == rhs.streetName)||((this.streetName!= null)&&this.streetName.equals(rhs.streetName))))&&((this.city == rhs.city)||((this.city!= null)&&this.city.equals(rhs.city))))&&((this.phone == rhs.phone)||((this.phone!= null)&&this.phone.equals(rhs.phone))))&&((this.additionalAddressInfo == rhs.additionalAddressInfo)||((this.additionalAddressInfo!= null)&&this.additionalAddressInfo.equals(rhs.additionalAddressInfo))))&&((this.state == rhs.state)||((this.state!= null)&&this.state.equals(rhs.state))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.email == rhs.email)||((this.email!= null)&&this.email.equals(rhs.email))));
     }
 

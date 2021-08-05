@@ -13,8 +13,8 @@ import org.apache.avro.message.SchemaStore;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class Sku extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3134860791161156881L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sku\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"attributes\",\"type\":{\"type\":\"record\",\"name\":\"ProductAttributes\",\"fields\":[{\"name\":\"productUrl\",\"type\":\"string\"},{\"name\":\"colorCode\",\"type\":\"string\"},{\"name\":\"colorDisplayName\",\"type\":\"string\"},{\"name\":\"size\",\"type\":\"string\"}]}},{\"name\":\"lineItemPrice\",\"type\":{\"type\":\"record\",\"name\":\"LineItemPrice\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"int\"}]}},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Image\",\"fields\":[{\"name\":\"url\",\"type\":\"string\"}]}}}]}");
+  private static final long serialVersionUID = -6600555027721610116L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sku\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"code\",\"type\":\"string\"},{\"name\":\"attributes\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"lineItemPrice\",\"type\":{\"type\":\"record\",\"name\":\"LineItemPrice\",\"fields\":[{\"name\":\"currencyCode\",\"type\":\"string\"},{\"name\":\"itemPriceBeforeDiscount\",\"type\":\"int\"},{\"name\":\"discount\",\"type\":\"int\"},{\"name\":\"itemPriceAfterDiscount\",\"type\":\"int\"}]}},{\"name\":\"images\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Image\",\"fields\":[{\"name\":\"url\",\"type\":\"string\"}]}}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -53,7 +53,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
 
   @Deprecated public int id;
   @Deprecated public java.lang.CharSequence code;
-  @Deprecated public com.hcl.hclmessaging.dto.auro.ProductAttributes attributes;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> attributes;
   @Deprecated public com.hcl.hclmessaging.dto.auro.LineItemPrice lineItemPrice;
   @Deprecated public java.util.List<com.hcl.hclmessaging.dto.auro.Image> images;
 
@@ -72,7 +72,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
    * @param lineItemPrice The new value for lineItemPrice
    * @param images The new value for images
    */
-  public Sku(java.lang.Integer id, java.lang.CharSequence code, com.hcl.hclmessaging.dto.auro.ProductAttributes attributes, com.hcl.hclmessaging.dto.auro.LineItemPrice lineItemPrice, java.util.List<com.hcl.hclmessaging.dto.auro.Image> images) {
+  public Sku(java.lang.Integer id, java.lang.CharSequence code, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> attributes, com.hcl.hclmessaging.dto.auro.LineItemPrice lineItemPrice, java.util.List<com.hcl.hclmessaging.dto.auro.Image> images) {
     this.id = id;
     this.code = code;
     this.attributes = attributes;
@@ -99,7 +99,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
     switch (field$) {
     case 0: id = (java.lang.Integer)value$; break;
     case 1: code = (java.lang.CharSequence)value$; break;
-    case 2: attributes = (com.hcl.hclmessaging.dto.auro.ProductAttributes)value$; break;
+    case 2: attributes = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
     case 3: lineItemPrice = (com.hcl.hclmessaging.dto.auro.LineItemPrice)value$; break;
     case 4: images = (java.util.List<com.hcl.hclmessaging.dto.auro.Image>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -142,7 +142,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
    * Gets the value of the 'attributes' field.
    * @return The value of the 'attributes' field.
    */
-  public com.hcl.hclmessaging.dto.auro.ProductAttributes getAttributes() {
+  public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getAttributes() {
     return attributes;
   }
 
@@ -150,7 +150,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
    * Sets the value of the 'attributes' field.
    * @param value the value to set.
    */
-  public void setAttributes(com.hcl.hclmessaging.dto.auro.ProductAttributes value) {
+  public void setAttributes(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
     this.attributes = value;
   }
 
@@ -220,8 +220,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
 
     private int id;
     private java.lang.CharSequence code;
-    private com.hcl.hclmessaging.dto.auro.ProductAttributes attributes;
-    private com.hcl.hclmessaging.dto.auro.ProductAttributes.Builder attributesBuilder;
+    private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> attributes;
     private com.hcl.hclmessaging.dto.auro.LineItemPrice lineItemPrice;
     private com.hcl.hclmessaging.dto.auro.LineItemPrice.Builder lineItemPriceBuilder;
     private java.util.List<com.hcl.hclmessaging.dto.auro.Image> images;
@@ -248,9 +247,6 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
       if (isValidValue(fields()[2], other.attributes)) {
         this.attributes = data().deepCopy(fields()[2].schema(), other.attributes);
         fieldSetFlags()[2] = true;
-      }
-      if (other.hasAttributesBuilder()) {
-        this.attributesBuilder = com.hcl.hclmessaging.dto.auro.ProductAttributes.newBuilder(other.getAttributesBuilder());
       }
       if (isValidValue(fields()[3], other.lineItemPrice)) {
         this.lineItemPrice = data().deepCopy(fields()[3].schema(), other.lineItemPrice);
@@ -283,7 +279,6 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
         this.attributes = data().deepCopy(fields()[2].schema(), other.attributes);
         fieldSetFlags()[2] = true;
       }
-      this.attributesBuilder = null;
       if (isValidValue(fields()[3], other.lineItemPrice)) {
         this.lineItemPrice = data().deepCopy(fields()[3].schema(), other.lineItemPrice);
         fieldSetFlags()[3] = true;
@@ -376,7 +371,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
       * Gets the value of the 'attributes' field.
       * @return The value.
       */
-    public com.hcl.hclmessaging.dto.auro.ProductAttributes getAttributes() {
+    public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getAttributes() {
       return attributes;
     }
 
@@ -385,9 +380,8 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
       * @param value The value of 'attributes'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.Sku.Builder setAttributes(com.hcl.hclmessaging.dto.auro.ProductAttributes value) {
+    public com.hcl.hclmessaging.dto.auro.Sku.Builder setAttributes(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
       validate(fields()[2], value);
-      this.attributesBuilder = null;
       this.attributes = value;
       fieldSetFlags()[2] = true;
       return this;
@@ -401,39 +395,6 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
       return fieldSetFlags()[2];
     }
 
-    /**
-     * Gets the Builder instance for the 'attributes' field and creates one if it doesn't exist yet.
-     * @return This builder.
-     */
-    public com.hcl.hclmessaging.dto.auro.ProductAttributes.Builder getAttributesBuilder() {
-      if (attributesBuilder == null) {
-        if (hasAttributes()) {
-          setAttributesBuilder(com.hcl.hclmessaging.dto.auro.ProductAttributes.newBuilder(attributes));
-        } else {
-          setAttributesBuilder(com.hcl.hclmessaging.dto.auro.ProductAttributes.newBuilder());
-        }
-      }
-      return attributesBuilder;
-    }
-
-    /**
-     * Sets the Builder instance for the 'attributes' field
-     * @param value The builder instance that must be set.
-     * @return This builder.
-     */
-    public com.hcl.hclmessaging.dto.auro.Sku.Builder setAttributesBuilder(com.hcl.hclmessaging.dto.auro.ProductAttributes.Builder value) {
-      clearAttributes();
-      attributesBuilder = value;
-      return this;
-    }
-
-    /**
-     * Checks whether the 'attributes' field has an active Builder instance
-     * @return True if the 'attributes' field has an active Builder instance
-     */
-    public boolean hasAttributesBuilder() {
-      return attributesBuilder != null;
-    }
 
     /**
       * Clears the value of the 'attributes' field.
@@ -441,7 +402,6 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
       */
     public com.hcl.hclmessaging.dto.auro.Sku.Builder clearAttributes() {
       attributes = null;
-      attributesBuilder = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -566,11 +526,7 @@ public class Sku extends org.apache.avro.specific.SpecificRecordBase implements 
         Sku record = new Sku();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.Integer) defaultValue(fields()[0]);
         record.code = fieldSetFlags()[1] ? this.code : (java.lang.CharSequence) defaultValue(fields()[1]);
-        if (attributesBuilder != null) {
-          record.attributes = this.attributesBuilder.build();
-        } else {
-          record.attributes = fieldSetFlags()[2] ? this.attributes : (com.hcl.hclmessaging.dto.auro.ProductAttributes) defaultValue(fields()[2]);
-        }
+        record.attributes = fieldSetFlags()[2] ? this.attributes : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[2]);
         if (lineItemPriceBuilder != null) {
           record.lineItemPrice = this.lineItemPriceBuilder.build();
         } else {

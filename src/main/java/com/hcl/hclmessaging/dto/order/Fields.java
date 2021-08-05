@@ -22,6 +22,18 @@ public class Fields {
     private String fulfillmentType;
     @JsonProperty("storeId")
     private String storeId;
+    @JsonProperty("channel")
+    private String channel;
+
+    @JsonProperty("channel")
+    public String getChannel() {
+        return channel;
+    }
+    @JsonProperty("channel")
+    public void setChannel(String channel) {
+        this.channel = channel;
+    }
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 

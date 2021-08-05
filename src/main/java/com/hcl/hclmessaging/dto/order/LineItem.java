@@ -40,7 +40,7 @@ public class LineItem {
     @JsonProperty("productId")
     private String productId;
     @JsonProperty("name")
-    private Name name;
+    private Map<String, String> name;
     @JsonProperty("productType")
     private ProductType productType;
     @JsonProperty("variant")
@@ -64,7 +64,7 @@ public class LineItem {
     @JsonProperty("priceMode")
     private String priceMode;
     @JsonProperty("totalPrice")
-    private TotalPrice totalPrice;
+    private Price totalPrice;
     @JsonProperty("taxedPrice")
     private TaxedPrice taxedPrice;
     @JsonProperty("custom")
@@ -95,12 +95,12 @@ public class LineItem {
     }
 
     @JsonProperty("name")
-    public Name getName() {
+    public Map<String, String> getName() {
         return name;
     }
 
     @JsonProperty("name")
-    public void setName(Name name) {
+    public void setName(Map<String, String> name) {
         this.name = name;
     }
 
@@ -215,12 +215,12 @@ public class LineItem {
     }
 
     @JsonProperty("totalPrice")
-    public TotalPrice getTotalPrice() {
+    public Price getTotalPrice() {
         return totalPrice;
     }
 
     @JsonProperty("totalPrice")
-    public void setTotalPrice(TotalPrice totalPrice) {
+    public void setTotalPrice(Price totalPrice) {
         this.totalPrice = totalPrice;
     }
 

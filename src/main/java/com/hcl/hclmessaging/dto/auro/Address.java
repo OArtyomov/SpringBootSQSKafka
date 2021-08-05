@@ -12,23 +12,23 @@ import org.apache.avro.message.SchemaStore;
 
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
-public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -1738629236139731290L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ShippingAddress\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"phoneNumber\",\"type\":\"string\"},{\"name\":\"address\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"deliveryNote\",\"type\":\"string\"}]}");
+public class Address extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 1824611030352012761L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Address\",\"namespace\":\"com.hcl.hclmessaging.dto.auro\",\"fields\":[{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"phoneNumber\",\"type\":\"string\"},{\"name\":\"address\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"deliveryNote\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<ShippingAddress> ENCODER =
-      new BinaryMessageEncoder<ShippingAddress>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<Address> ENCODER =
+      new BinaryMessageEncoder<Address>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<ShippingAddress> DECODER =
-      new BinaryMessageDecoder<ShippingAddress>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<Address> DECODER =
+      new BinaryMessageDecoder<Address>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageDecoder instance used by this class.
    */
-  public static BinaryMessageDecoder<ShippingAddress> getDecoder() {
+  public static BinaryMessageDecoder<Address> getDecoder() {
     return DECODER;
   }
 
@@ -36,17 +36,17 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
    * Create a new BinaryMessageDecoder instance for this class that uses the specified {@link SchemaStore}.
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    */
-  public static BinaryMessageDecoder<ShippingAddress> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<ShippingAddress>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<Address> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<Address>(MODEL$, SCHEMA$, resolver);
   }
 
-  /** Serializes this ShippingAddress to a ByteBuffer. */
+  /** Serializes this Address to a ByteBuffer. */
   public java.nio.ByteBuffer toByteBuffer() throws java.io.IOException {
     return ENCODER.encode(this);
   }
 
-  /** Deserializes a ShippingAddress from a ByteBuffer. */
-  public static ShippingAddress fromByteBuffer(
+  /** Deserializes a Address from a ByteBuffer. */
+  public static Address fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -65,7 +65,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public ShippingAddress() {}
+  public Address() {}
 
   /**
    * All-args constructor.
@@ -78,7 +78,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
    * @param state The new value for state
    * @param deliveryNote The new value for deliveryNote
    */
-  public ShippingAddress(java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence email, java.lang.CharSequence phoneNumber, java.lang.CharSequence address, java.lang.CharSequence city, java.lang.CharSequence state, java.lang.CharSequence deliveryNote) {
+  public Address(java.lang.CharSequence firstName, java.lang.CharSequence lastName, java.lang.CharSequence email, java.lang.CharSequence phoneNumber, java.lang.CharSequence address, java.lang.CharSequence city, java.lang.CharSequence state, java.lang.CharSequence deliveryNote) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -250,36 +250,36 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
   }
 
   /**
-   * Creates a new ShippingAddress RecordBuilder.
-   * @return A new ShippingAddress RecordBuilder
+   * Creates a new Address RecordBuilder.
+   * @return A new Address RecordBuilder
    */
-  public static com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder newBuilder() {
-    return new com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder();
+  public static com.hcl.hclmessaging.dto.auro.Address.Builder newBuilder() {
+    return new com.hcl.hclmessaging.dto.auro.Address.Builder();
   }
 
   /**
-   * Creates a new ShippingAddress RecordBuilder by copying an existing Builder.
+   * Creates a new Address RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new ShippingAddress RecordBuilder
+   * @return A new Address RecordBuilder
    */
-  public static com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder newBuilder(com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder other) {
-    return new com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder(other);
+  public static com.hcl.hclmessaging.dto.auro.Address.Builder newBuilder(com.hcl.hclmessaging.dto.auro.Address.Builder other) {
+    return new com.hcl.hclmessaging.dto.auro.Address.Builder(other);
   }
 
   /**
-   * Creates a new ShippingAddress RecordBuilder by copying an existing ShippingAddress instance.
+   * Creates a new Address RecordBuilder by copying an existing Address instance.
    * @param other The existing instance to copy.
-   * @return A new ShippingAddress RecordBuilder
+   * @return A new Address RecordBuilder
    */
-  public static com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder newBuilder(com.hcl.hclmessaging.dto.auro.ShippingAddress other) {
-    return new com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder(other);
+  public static com.hcl.hclmessaging.dto.auro.Address.Builder newBuilder(com.hcl.hclmessaging.dto.auro.Address other) {
+    return new com.hcl.hclmessaging.dto.auro.Address.Builder(other);
   }
 
   /**
-   * RecordBuilder for ShippingAddress instances.
+   * RecordBuilder for Address instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ShippingAddress>
-    implements org.apache.avro.data.RecordBuilder<ShippingAddress> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Address>
+    implements org.apache.avro.data.RecordBuilder<Address> {
 
     private java.lang.CharSequence firstName;
     private java.lang.CharSequence lastName;
@@ -299,7 +299,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder other) {
+    private Builder(com.hcl.hclmessaging.dto.auro.Address.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.firstName)) {
         this.firstName = data().deepCopy(fields()[0].schema(), other.firstName);
@@ -336,10 +336,10 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
     }
 
     /**
-     * Creates a Builder by copying an existing ShippingAddress instance
+     * Creates a Builder by copying an existing Address instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.hcl.hclmessaging.dto.auro.ShippingAddress other) {
+    private Builder(com.hcl.hclmessaging.dto.auro.Address other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.firstName)) {
         this.firstName = data().deepCopy(fields()[0].schema(), other.firstName);
@@ -388,7 +388,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'firstName'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setFirstName(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setFirstName(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.firstName = value;
       fieldSetFlags()[0] = true;
@@ -408,7 +408,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'firstName' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearFirstName() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearFirstName() {
       firstName = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -427,7 +427,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'lastName'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setLastName(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setLastName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.lastName = value;
       fieldSetFlags()[1] = true;
@@ -447,7 +447,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'lastName' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearLastName() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearLastName() {
       lastName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -466,7 +466,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setEmail(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.email = value;
       fieldSetFlags()[2] = true;
@@ -486,7 +486,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearEmail() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearEmail() {
       email = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -505,7 +505,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'phoneNumber'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setPhoneNumber(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setPhoneNumber(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.phoneNumber = value;
       fieldSetFlags()[3] = true;
@@ -525,7 +525,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'phoneNumber' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearPhoneNumber() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearPhoneNumber() {
       phoneNumber = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -544,7 +544,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'address'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setAddress(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setAddress(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.address = value;
       fieldSetFlags()[4] = true;
@@ -564,7 +564,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'address' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearAddress() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearAddress() {
       address = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -583,7 +583,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'city'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setCity(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setCity(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.city = value;
       fieldSetFlags()[5] = true;
@@ -603,7 +603,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'city' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearCity() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearCity() {
       city = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -622,7 +622,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'state'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setState(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setState(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.state = value;
       fieldSetFlags()[6] = true;
@@ -642,7 +642,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'state' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearState() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearState() {
       state = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -661,7 +661,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * @param value The value of 'deliveryNote'.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder setDeliveryNote(java.lang.CharSequence value) {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder setDeliveryNote(java.lang.CharSequence value) {
       validate(fields()[7], value);
       this.deliveryNote = value;
       fieldSetFlags()[7] = true;
@@ -681,7 +681,7 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
       * Clears the value of the 'deliveryNote' field.
       * @return This builder.
       */
-    public com.hcl.hclmessaging.dto.auro.ShippingAddress.Builder clearDeliveryNote() {
+    public com.hcl.hclmessaging.dto.auro.Address.Builder clearDeliveryNote() {
       deliveryNote = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -689,9 +689,9 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
 
     @Override
     @SuppressWarnings("unchecked")
-    public ShippingAddress build() {
+    public Address build() {
       try {
-        ShippingAddress record = new ShippingAddress();
+        Address record = new Address();
         record.firstName = fieldSetFlags()[0] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.lastName = fieldSetFlags()[1] ? this.lastName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.email = fieldSetFlags()[2] ? this.email : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -708,8 +708,8 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<ShippingAddress>
-    WRITER$ = (org.apache.avro.io.DatumWriter<ShippingAddress>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<Address>
+    WRITER$ = (org.apache.avro.io.DatumWriter<Address>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -717,8 +717,8 @@ public class ShippingAddress extends org.apache.avro.specific.SpecificRecordBase
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<ShippingAddress>
-    READER$ = (org.apache.avro.io.DatumReader<ShippingAddress>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<Address>
+    READER$ = (org.apache.avro.io.DatumReader<Address>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
