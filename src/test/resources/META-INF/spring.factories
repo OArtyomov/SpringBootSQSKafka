@@ -1,2 +1,2 @@
 org.springframework.cloud.bootstrap.BootstrapConfiguration=\
-com.hcl.hclmessaging.test.configuration.WireMockConfiguration
+com.hcl.hclmessaging.test.configuration.MockServerConfiguration
