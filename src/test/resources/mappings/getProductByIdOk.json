@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/products/1"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\n  \"id\": 1,\n  \"name\": \"ExampleOfProduct\",\n  \"description\": \"This is example of product\",\n  \"featured\": false\n}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

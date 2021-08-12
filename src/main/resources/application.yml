@@ -1,5 +1,7 @@
 spring:
   cloud:
+    bootstrap:
+      enabled: true
     stream:
       kafka:
         binder:
@@ -29,6 +31,10 @@ cloud:
 sqs:
   queue: HCLSQSQueue
 
+products:
+  url: http://google.com
+
 logging:
   level:
     root: INFO
+
