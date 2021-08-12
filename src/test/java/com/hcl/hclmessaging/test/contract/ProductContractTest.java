@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -39,5 +41,22 @@ public class ProductContractTest extends AbstractBaseTest {
         }
     }
 
+    @Test
+    public void testGetAllProductsOk() {
+        ResponseEntity<List<Product>> all = productClient.findAll();
+        assertThat(all.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(all.getHeaders().getContentType()).isEqualTo(MediaType.APPLICATION_JSON);
+        List<Product> body = all.getBody();
+        assertThat(body).hasSize(3);
+    }
+
+    @Test
+    public void testGetFeaturedProductsOk() {
+        ResponseEntity<List<Product>> all = productClient.findAllFeatured();
+        assertThat(all.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(all.getHeaders().getContentType()).isEqualTo(MediaType.APPLICATION_JSON);
+        List<Product> body = all.getBody();
+        assertThat(body).hasSize(2);
+    }
 
 }
