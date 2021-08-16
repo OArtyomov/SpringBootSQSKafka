@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hcl.client.integration.configuration.ProductAutoConfiguration

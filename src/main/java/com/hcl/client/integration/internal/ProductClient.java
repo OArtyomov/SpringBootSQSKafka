@@ -1,6 +1,6 @@
-package com.hcl.hclmessaging.integration.client.internal;
+package com.hcl.client.integration.internal;
 
-import com.hcl.hclmessaging.integration.client.dto.Product;
+import com.hcl.client.integration.dto.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

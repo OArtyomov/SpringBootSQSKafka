@@ -1,7 +1,7 @@
 package com.hcl.hclmessaging.test.contract;
 
-import com.hcl.hclmessaging.integration.client.dto.Product;
-import com.hcl.hclmessaging.integration.client.internal.ProductClient;
+import com.hcl.client.integration.dto.Product;
+import com.hcl.client.integration.internal.ProductClient;
 import com.hcl.hclmessaging.test.AbstractBaseTest;
 import feign.FeignException;
 import org.junit.jupiter.api.Test;
