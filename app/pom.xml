@@ -159,6 +159,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!--This configuration is responsible for generation of stubs and test for contracts -->
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>

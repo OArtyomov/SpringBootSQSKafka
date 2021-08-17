@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK, classes = TestClassesConfiguration.class)
@@ -16,6 +15,4 @@ public abstract class AbstractConsumerStubTest {
     @Autowired
     protected RestTemplate restTemplate;
 
-    @Autowired
-    protected MockMvc mockMvc;
 }
