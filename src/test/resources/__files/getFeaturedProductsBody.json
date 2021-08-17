@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "name": "ExampleOfProduct",
+    "description": "This is example of product",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "name": "ExampleOfProduct3",
+    "description": "This is example of product3",
+    "featured": false
+  }
+
+]

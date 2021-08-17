@@ -5,7 +5,7 @@
   },
   "response": {
     "status": 200,
-    "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"ExampleOfProduct\",\n    \"description\": \"This is example of product\",\n    \"featured\": false\n  },\n  {\n    \"id\": 3,\n    \"name\": \"ExampleOfProduct3\",\n    \"description\": \"This is example of product3\",\n    \"featured\": false\n  }\n\n]",
+    "bodyFileName" : "getFeaturedProductsBody.json",
     "headers": {
       "Content-Type": "application/json"
     }
