@@ -1,4 +1,4 @@
-package com.hcl.client.integration.dto;
+package com.hcl.hclmessaging.web.dto;
 
 import lombok.Getter;
 import lombok.Setter;

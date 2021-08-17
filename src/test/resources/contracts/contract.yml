@@ -1,0 +1,12 @@
+request:
+  method: GET
+  url: /products/1
+response:
+  status: 200
+  body:
+    "id": 1
+    "name": "ExampleOfProduct"
+    "description": "This is example of product"
+    "featured": false
+  headers:
+    Content-Type: application/json
