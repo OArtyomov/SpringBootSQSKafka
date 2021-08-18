@@ -17,6 +17,7 @@
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
 		<spring-cloud-aws.version>2.2.6.RELEASE</spring-cloud-aws.version>
+		<shared.contracts.version>0.0.1-SNAPSHOT</shared.contracts.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -95,10 +96,11 @@
 			<artifactId>guava</artifactId>
 			<version>30.1.1-jre</version>
 		</dependency>
+		<!--This is dependency with contracts from consumer -->
 		<dependency>
 			<groupId>com.hcl</groupId>
 			<artifactId>shared-contracts</artifactId>
-			<version>${project.version}</version>
+			<version>${shared.contracts.version}</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -159,7 +161,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			<!--This configuration is responsible for generation of stubs and test for contracts -->
+			<!--This configuration is responsible for generation of test for contracts -->
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
@@ -167,10 +169,11 @@
 				<configuration>
 					<baseClassForTests>com.hcl.hclmessaging.test.AbstractBaseTest</baseClassForTests>
 					<contractsPath>contracts</contractsPath>
+					<jarSkip>true</jarSkip>
 					<contractDependency>
 						<groupId>com.hcl</groupId>
 						<artifactId>shared-contracts</artifactId>
-						<version>${project.version}</version>
+						<version>${shared.contracts.version}</version>
 					</contractDependency>
 					<contractsMode>LOCAL</contractsMode>
 				</configuration>
