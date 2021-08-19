@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>shared-contracts</module>
-        <module>shared-contracts-consumer</module>
         <module>app</module>
     </modules>
 </project>
