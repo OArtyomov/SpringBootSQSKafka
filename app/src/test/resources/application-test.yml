@@ -1,8 +1,5 @@
 cloud:
   aws:
     credentials:
-      access-key: AA
-      secret-key: BB
-
-products:
-  url: http://localhost:${wiremock.port}
+      access-key: AKIAVCTGKVB4ADUVQYNH
+      secret-key: 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

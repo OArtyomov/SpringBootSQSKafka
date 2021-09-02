@@ -18,6 +18,5 @@ public abstract class AbstractBaseTest {
     @Autowired
     protected ObjectMapper objectMapper;
 
-    public static final String WIRE_MOCK_PORT_PROPERTY_NAME = "wiremock.port";
 
 }
