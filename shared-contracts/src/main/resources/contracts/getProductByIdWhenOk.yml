@@ -10,3 +10,11 @@ response:
     "featured": false
   headers:
     Content-Type: application/json
+  matchers:
+    body:
+      - path: $.name
+        type: by_regex
+        value: ExampleOfProduct
+      - path: $.description
+        type: by_regex
+        value: ^This is exam[a-zA-Z]le of product$
